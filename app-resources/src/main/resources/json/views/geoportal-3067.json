@@ -5,7 +5,7 @@
   "public" : true,
   "oskari" : {
     "application" : "geoportal",
-    "page" : "geoportal",
+    "page" : "geoportal_white",
     "development_prefix" : "/applications"
   },
   "selectedLayers" : ["wmslayer-kapsi-mml-fi.json"],
