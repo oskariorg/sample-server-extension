@@ -1,0 +1,16 @@
+{
+    "type":"wmslayer",
+    "url":"http://tiles.kartat.kapsi.fi/taustakartta?",
+    "name":"taustakartta",
+    "organization": "Oskari.org",
+    "inspiretheme": "Background maps",
+    "locale": {
+        "en": {
+            "name": "NLS FI background map"
+        }
+    },
+    "role_permissions": {
+        "Guest" : ["VIEW_LAYER", "VIEW_PUBLISHED"],
+        "User" : ["VIEW_LAYER", "VIEW_PUBLISHED", "PUBLISH"]
+    }
+}
