@@ -36,6 +36,70 @@
                 z-index: 2;
             }
 
+   .oskari-tile {
+        background: #9e9e9e !important;
+		height: auto !important;
+		min-height: 31px !important;
+        line-height: 15px !important;
+    }
+    .oskari-tile-closed {
+        background-color: white !important;
+        border-bottom: 1px solid #c8c9ca !important;
+        border-top: 1px solid white !important;
+    }
+
+    .oskari-tile-attached {
+        background-color: #2d2d2d !important;
+        border-bottom: 1px solid white !important;
+        border-top: 1px solid #c8c9ca !important;
+    }
+
+    .oskari-tile-attached .oskari-tile-title {
+		color: white !important;
+	}
+
+	.oskari-tile-closed .oskari-tile-title {
+		color: black !important;
+	}
+
+    .oskari-flyout-title {
+        color: white !important;
+    }
+
+    .oskari-flyouttoolbar {
+    	background-color: #c8c9ca !important;
+		background-position: -170px -23px !important;
+        background-repeat: no-repeat;
+    }
+
+    .oskari-flyoutheading {
+		background-color: #9e9e9e !important;
+		border-top: 0px !important;
+		border-bottom: 0px !important;
+		height: 14px !important;
+		width: 100% !important;
+	}
+
+    #toolbar {
+        margin: 30px 5px 30px 5px !important;
+        width: auto !important;
+        border: 1px black solid;
+        border-radius: 5px;
+        box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.75);
+    }
+
+    #toolbar div.toolrow {
+        border: 0px;
+    }
+
+    .divmanazerpopup h3.popupHeader {
+        background-color: #9e9e9e !important;
+        color: white;
+    }
+
+    #logobar {
+        background-image: url('/Oskari${path}/oskari_rgb_72.png') !important;
+    }
             #contentMap {
                 height: 100%;
                 margin-left: 170px;
@@ -87,7 +151,7 @@
 <body>
 
 <nav id="maptools">
-    <div id="loginbar">
+    <div id="logobar">
     </div>
     <div id="menubar">
     </div>
@@ -125,6 +189,10 @@
             </c:otherwise>
         </c:choose>
     </div>
+            <div id="demolink">
+                <a href="#" style="margin: 10px; color: #3c3c3c;"
+                onClick="changeAppsetup()">EPSG:3857</a>
+            </div>
 </nav>
 <div id="contentMap" class="oskariui container-fluid">
     <div id="menutoolbar" class="container-fluid"></div>
@@ -139,9 +207,18 @@
     </div>
 </div>
 
-
 <!-- ############# Javascript ################# -->
 
+<script>
+function changeAppsetup() {
+    var appsetup = Oskari.app.getSystemDefaultViews().filter(function (appsetup) {
+        return  appsetup.uuid !== Oskari.app.getUuid();
+    });
+
+    window.location=window.location.pathname + '?uuid=' + appsetup[0].uuid;
+    return false;
+}
+</script>
 <!--  OSKARI -->
 
 <script type="text/javascript">

@@ -87,7 +87,7 @@
 <body>
 
 <nav id="maptools">
-    <div id="loginbar">
+    <div id="logobar">
     </div>
     <div id="menubar">
     </div>
@@ -125,6 +125,12 @@
             </c:otherwise>
         </c:choose>
     </div>
+
+
+            <div id="demolink">
+                <a href="#" style="margin: 10px; color: #ffd400;"
+                onClick="changeAppsetup()">EPSG:3067</a>
+            </div>
 </nav>
 <div id="contentMap" class="oskariui container-fluid">
     <div id="menutoolbar" class="container-fluid"></div>
@@ -142,6 +148,16 @@
 
 <!-- ############# Javascript ################# -->
 
+<script>
+function changeAppsetup() {
+    var appsetup = Oskari.app.getSystemDefaultViews().filter(function (appsetup) {
+        return  appsetup.uuid !== Oskari.app.getUuid();
+    });
+
+    window.location=window.location.pathname + '?uuid=' + appsetup[0].uuid;
+    return false;
+}
+</script>
 <!--  OSKARI -->
 
 <script type="text/javascript">

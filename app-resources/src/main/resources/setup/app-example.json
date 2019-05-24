@@ -1,10 +1,4 @@
 {
-    "create": [
-        "initial-dataproviders.sql",
-        "add-inspire-themes.sql",
-        "initial-users.sql",
-        "register-sample-info.sql"
-    ],
     "views" : [
         "geoportal-3857.json",
         "publisher-template.json",
