@@ -108,7 +108,6 @@
         { "id" : "heatmap" },
         { "id" : "timeseries" },
         { "id" : "maprotator" },
-        { "id" : "findbycoordinates" },
         { "id" : "statsgrid" }
     ]
 }

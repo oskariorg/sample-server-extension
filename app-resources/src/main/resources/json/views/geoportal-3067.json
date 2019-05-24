@@ -77,7 +77,6 @@
     { "id" : "printout" },
     { "id" : "analyse" },
     { "id" : "myplacesimport" },
-    { "id" : "findbycoordinates" },
     {
       "id" : "featuredata2",
       "config": {
