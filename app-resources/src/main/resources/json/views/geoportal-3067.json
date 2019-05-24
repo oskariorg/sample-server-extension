@@ -71,7 +71,13 @@
     { "id" : "personaldata" },
     { "id" : "publisher2" },
     { "id" : "maplegend" },
-    { "id" : "userguide" },
+    {
+      "id" : "userguide",
+      "config" : {
+        "tags" : "userguide",
+        "flyoutClazz" : "Oskari.mapframework.bundle.userguide.SimpleFlyout"
+      }
+    },
     { "id" : "guidedtour" },
     { "id" : "sample-info" },
     { "id" : "myplaces3" },
@@ -84,6 +90,7 @@
         "selectionTools": true
       }
     },
-    { "id" : "heatmap" }
+    { "id" : "heatmap" },
+    { "id" : "statsgrid" }
   ]
 }
