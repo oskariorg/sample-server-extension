@@ -1,7 +1,7 @@
 {
 	"srs_name": "EPSG:3857",
     "type":"vectortilelayer",
-    "url":"https://maps.tilehosting.com/data/v3/{z}/{x}/{y}.pbf?key=O5GDdNrARRI1s6kxgvxS",
+    "url":"https://api.maptiler.com/tiles/v3/{z}/{x}/{y}.pbf?key=O5GDdNrARRI1s6kxgvxS",
     "name":"openmaptiles",
     "organization": "Oskari.org",
     "inspiretheme": "Background maps",
