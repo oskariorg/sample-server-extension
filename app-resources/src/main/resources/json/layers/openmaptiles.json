@@ -20,6 +20,9 @@
         "Guest" : ["VIEW_LAYER", "VIEW_PUBLISHED"],
         "User" : ["VIEW_LAYER", "VIEW_PUBLISHED", "PUBLISH"]
     },
+    "attributes": {
+        "forcedSRS": ["EPSG:3857"]
+    },
     "options": {
         "attributions": [
             {"label": "© MapTiler", "link":"https://www.maptiler.com/license/maps/"},
