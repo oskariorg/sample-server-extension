@@ -1,8 +1,6 @@
 package flyway.example;
 
 import fi.mml.portti.domain.permissions.Permissions;
-import fi.mml.portti.service.db.permissions.PermissionsService;
-import fi.mml.portti.service.db.permissions.PermissionsServiceIbatisImpl;
 import fi.nls.oskari.domain.Role;
 import fi.nls.oskari.domain.User;
 import fi.nls.oskari.domain.map.OskariLayer;
@@ -10,14 +8,18 @@ import fi.nls.oskari.service.ServiceException;
 import fi.nls.oskari.service.ServiceRuntimeException;
 import fi.nls.oskari.service.UserService;
 import org.flywaydb.core.api.migration.jdbc.JdbcMigration;
+import org.oskari.permissions.PermissionService;
+import org.oskari.permissions.PermissionServiceMybatisImpl;
 import org.oskari.permissions.model.OskariLayerResource;
 import org.oskari.permissions.model.Permission;
 import org.oskari.permissions.model.Resource;
+import org.oskari.permissions.model.ResourceType;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Add permissions for regionset: countries
@@ -26,11 +28,11 @@ public class V1_1_2__add_permission_for_regionset implements JdbcMigration {
 
     public void migrate(Connection connection)
             throws SQLException {
-        PermissionsService service = new PermissionsServiceIbatisImpl();
+        PermissionService service = new PermissionServiceMybatisImpl();
         for(Resource resToUpdate : getResources()) {
-            Resource dbRes = service.findResource(resToUpdate);
-            if(dbRes != null) {
-                resToUpdate = dbRes;
+            Optional<Resource> dbRes = service.findResource(ResourceType.maplayer, resToUpdate.getMapping());
+            if(dbRes.isPresent()) {
+                resToUpdate = dbRes.get();
             }
             for(Role role : getRoles()) {
                 if(resToUpdate.hasPermission(role, Permissions.PERMISSION_TYPE_VIEW_LAYER)) {
@@ -43,7 +45,7 @@ public class V1_1_2__add_permission_for_regionset implements JdbcMigration {
                 permission.setExternalId(Long.toString(role.getId()));
                 resToUpdate.addPermission(permission);
             }
-            service.saveResourcePermissions(resToUpdate);
+            service.saveResource(resToUpdate);
         }
     }
 
