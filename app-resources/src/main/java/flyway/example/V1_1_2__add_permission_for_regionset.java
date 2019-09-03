@@ -37,7 +37,7 @@ public class V1_1_2__add_permission_for_regionset implements JdbcMigration {
                 }
                 final Permission permission = new Permission();
                 permission.setType(PermissionType.VIEW_LAYER);
-                permission.setExternalId((int) role.getId());
+                permission.setRoleId((int) role.getId());
                 resToUpdate.addPermission(permission);
             }
             service.saveResource(resToUpdate);
