@@ -3,6 +3,8 @@ package flyway.example;
 import fi.nls.oskari.domain.Role;
 import fi.nls.oskari.domain.User;
 import fi.nls.oskari.domain.map.OskariLayer;
+import fi.nls.oskari.map.layer.OskariLayerService;
+import fi.nls.oskari.service.OskariComponentManager;
 import fi.nls.oskari.service.ServiceException;
 import fi.nls.oskari.service.ServiceRuntimeException;
 import fi.nls.oskari.service.UserService;
@@ -47,7 +49,16 @@ public class V1_1_2__add_permission_for_regionset implements JdbcMigration {
     // statslayers described as layer resources for permissions handling
     protected List<Resource> getResources() {
         List<Resource> list = new ArrayList<>();
-        list.add(new OskariLayerResource(OskariLayer.TYPE_STATS, "resources://regionsets/ne_110m_admin_0_countries.json", "ne_110m_countries"));
+        OskariLayerService service = OskariComponentManager.getComponentOfType(OskariLayerService.class);
+        List<OskariLayer> layers = service.findByUrlAndName(
+                "resources://regionsets/ne_110m_admin_0_countries.json", "ne_110m_countries");
+        for (OskariLayer layer : layers) {
+            Resource res = new Resource();
+            res.setType(ResourceType.maplayer);
+            res.setMapping(Integer.toString(layer.getId()));
+            list.add(res);
+        }
+
         return list;
     }
 
