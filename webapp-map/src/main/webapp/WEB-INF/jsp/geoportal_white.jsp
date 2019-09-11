@@ -100,6 +100,10 @@
     #logobar {
         background-image: url('/Oskari${path}/oskari_rgb_72.png') !important;
     }
+
+    .oskari-tile.statsgrid .statsgrid-functionality .text {
+        color: white;
+    }
             #contentMap {
                 height: 100%;
                 margin-left: 170px;
