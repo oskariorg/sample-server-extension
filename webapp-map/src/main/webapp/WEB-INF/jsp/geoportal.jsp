@@ -106,10 +106,10 @@
             <c:when test="${!empty _logout_uri}">
                 <form action="${pageContext.request.contextPath}${_logout_uri}" method="POST" id="logoutform">
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                    <a href="${pageContext.request.contextPath}${_logout_uri}" onClick="jQuery('#logoutform').submit();return false;"><spring:message code="logout" text="Logout" /></a>
+                    <a href="${pageContext.request.contextPath}${_logout_uri}" style="color: #ffffff;" onClick="jQuery('#logoutform').submit();return false;"><spring:message code="logout" text="Logout" /></a>
                 </form>
                 <%-- oskari-profile-link id is used by the personaldata bundle - do not modify --%>
-                <a href="${pageContext.request.contextPath}${_registration_uri}" id="oskari-profile-link"><spring:message code="account" text="Account" /></a>
+                <a href="${pageContext.request.contextPath}${_registration_uri}" style="color: #ffffff;" id="oskari-profile-link"><spring:message code="account" text="Account" /></a>
             </c:when>
             <%-- Otherwise show appropriate logins --%>
             <c:otherwise>
