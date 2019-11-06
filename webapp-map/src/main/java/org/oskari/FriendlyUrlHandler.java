@@ -28,9 +28,29 @@ public class FriendlyUrlHandler {
         return "redirect:" + attachQuery(url, params.getRequest().getQueryString());
     }
 
+    @RequestMapping("/example")
+    public String redirectToExample(Model model,
+                                    @OskariParam ActionParameters params) throws Exception {
+        return redirectToExample(PropertyUtil.getDefaultLanguage(), model, params);
+    }
+
+    @RequestMapping("/example/{lang}")
+    public String redirectToExample(@PathVariable("lang") String lang,
+                                    Model model,
+                                    @OskariParam ActionParameters params) throws Exception {
+        if(!isSupported(lang)) {
+            lang = PropertyUtil.getDefaultLanguage();
+        }
+        String url = "/?lang=" + lang + "&viewId=4";
+        return "redirect:" + attachQuery(url, params.getRequest().getQueryString());
+    }
+
     private boolean isSupported(String lang) {
+        if (lang == null || lang.isEmpty()) {
+            return false;
+        }
         for(String l: PropertyUtil.getSupportedLanguages()) {
-            if(lang.equalsIgnoreCase(l)) {
+            if(l.equalsIgnoreCase(lang)) {
                 return true;
             }
         }
