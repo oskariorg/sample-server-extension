@@ -3,6 +3,7 @@
   "type" : "DEFAULT",
   "default" : true,
   "public" : true,
+  "onlyUuid" : false,
   "oskari" : {
     "application" : "geoportal",
     "page" : "geoportal_white",
