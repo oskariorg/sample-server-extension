@@ -2,6 +2,7 @@
     "type":"wmslayer",
     "url":"http://tiles.kartat.kapsi.fi/taustakartta?",
     "name":"taustakartta",
+    "version": "1.3.0",
     "organization": "Oskari.org",
     "inspiretheme": "Background maps",
     "locale": {
