@@ -1,0 +1,22 @@
+{
+    "type":"tiles3dlayer",
+    "url":"https://kartta.hel.fi/3d/b3dm/tileset.json",
+    "name":"hki_buildings_3d_textures",
+    "organization": "City of Helsinki",
+    "inspiretheme": "Buildings",
+    "locale": {
+		"fi": {
+            "name": "Helsingin kaupungin 3D-malli"
+        },
+        "sv": {
+            "name": "Helsingfors stad 3D"
+        },
+        "en": {
+            "name": "Helsinki city 3D"
+        }
+    },
+    "role_permissions": {
+        "Guest" : ["VIEW_LAYER", "VIEW_PUBLISHED"],
+        "User" : ["VIEW_LAYER", "VIEW_PUBLISHED", "PUBLISH"]
+    }
+}
