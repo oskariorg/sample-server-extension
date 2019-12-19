@@ -1,0 +1,2 @@
+insert into oskari_dataprovider(locale) values('{"fi":{"name":"Helsingin kaupunki"}, "sv": { "name" : "Helsingfors stad"},"en": { "name" : "City of Helsinki"}}');
+INSERT INTO oskari_maplayer_group (locale) values ('{"fi":{"name":"Rakennukset"}, "sv": { "name" : "Byggnader"},"en": { "name" : "Buildings"}}');
