@@ -1,0 +1,11 @@
+{
+	"bundles" : {
+		"mapping": [
+			"dimension-change.sql"
+		]
+	},
+    "views" : [
+        "geoportal-3067-3d.json",
+        "geoportal-3857-3d.json"
+    ]
+}
