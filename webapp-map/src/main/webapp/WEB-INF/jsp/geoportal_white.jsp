@@ -216,7 +216,7 @@
 <script>
 function changeAppsetup() {
     var appsetup = Oskari.app.getSystemDefaultViews().filter(function (appsetup) {
-        return  appsetup.uuid !== Oskari.app.getUuid();
+        return  appsetup.name === 'World';
     });
 
     window.location=window.location.pathname + '?uuid=' + appsetup[0].uuid;
