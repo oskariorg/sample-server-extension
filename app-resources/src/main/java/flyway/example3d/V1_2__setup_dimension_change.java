@@ -32,6 +32,10 @@ public class V1_2__setup_dimension_change implements JdbcMigration {
         List<Long> viewIds = getViewIds(conn, WORLD_PAGE_NAME, APPLICATION_2D_NAME);
         String uuid = getViewUuid( conn, WORLD_PAGE_NAME, APPLICATION_3D_NAME);
         setBundleForViews(conn, viewIds, uuid);
+        // Set World 2D view uuid for World 3D default appsetup
+        List<Long> viewIds = getViewIds(conn, WORLD_PAGE_NAME, APPLICATION_3D_NAME);
+        String uuid = getViewUuid( conn, WORLD_PAGE_NAME, APPLICATION_2D_NAME);
+        setBundleForViews(conn, viewIds, uuid);
         // Set Finland 3D view uuid for Finland default and user appsetups
         viewIds = getViewIds(conn, FINLAND_PAGE_NAME, APPLICATION_2D_NAME);
         uuid = getViewUuid( conn, FINLAND_PAGE_NAME, APPLICATION_3D_NAME);
@@ -40,7 +44,6 @@ public class V1_2__setup_dimension_change implements JdbcMigration {
         viewIds = getViewIds(conn, FINLAND_PAGE_NAME, APPLICATION_3D_NAME );
         uuid = getViewUuid( conn, FINLAND_PAGE_NAME, APPLICATION_2D_NAME);
         setBundleForViews(conn, viewIds, uuid);
-        // Note that World 3D view based appsetups doesn't need uuid because World view is default view
     }
     private void setBundleForViews (Connection conn, List<Long> ids, String uuid) throws SQLException {
         String conf = JSONHelper.getStringFromJSON(
