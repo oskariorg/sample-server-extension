@@ -121,7 +121,7 @@
         { "id" : "maprotator" },
         { "id" : "statsgrid" },
         { "id" : "dimension-change" },
-        { "id" : "shadow-plugin-3d" },
+        { "id" : "time-control-3d" },
         { "id" : "camera-controls-3d" }
     ]
 }
