@@ -10,7 +10,7 @@
         "development_prefix" : "/applications"
     },
     "selectedLayers" : [
-        "wmslayer-kapsi-mml-fi.json"
+        "nasa-blue-marble.json"
     ],
     "bundles" : [
         {
@@ -26,7 +26,6 @@
                     "units": "m",
                     "srsName": "EPSG:3857",
                     "projection": "EPSG:3857",
-                    "terrain": {},
                     "resolutions": [
                         39135.75848201024,
                         19567.87924100512,
