@@ -11,7 +11,7 @@ import java.sql.Connection;
 public class V1_0__create_3D_view implements JdbcMigration {
 
     public void migrate(Connection connection) throws Exception {
-         // run setup based on json under /src/main/resources/setup/app-example.json
+         // run setup based on json under /src/main/resources/setup/app-example-3d.json
         DBHandler.setupAppContent(connection, "app-example-3d.json");
     }
 }
