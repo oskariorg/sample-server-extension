@@ -1,0 +1,23 @@
+{
+    "type":"tiles3dlayer",
+    "url":"https://kartta.hel.fi/3d/datasource-data/e9cfc1bb-a015-4a73-b741-7535504c61bb/tileset.json",
+    "name":"hki_buildings_3d_textures",
+    "organization": "City of Helsinki",
+    "inspiretheme": "Buildings",
+    "srs_name": "EPSG:3857",
+    "locale": {
+		"fi": {
+            "name": "Helsingin kaupungin 3D-rakennukset tekstuureilla"
+        },
+		"sv": {
+            "name": "Helsingfors stads 3D byggnader med texturer"
+        },
+        "en": {
+            "name": "Helsinki city 3D buildings with textures"
+        }
+    },
+    "role_permissions": {
+        "Guest" : ["VIEW_LAYER", "VIEW_PUBLISHED"],
+        "User" : ["VIEW_LAYER", "VIEW_PUBLISHED", "PUBLISH"]
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "type":"wmtslayer",
+    "url":"https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/wmts.cgi",
+    "name":"Reference_Labels",
+    "version": "1.0.0",
+    "organization": "NASA EOSDIS",
+    "inspiretheme": "Background maps",
+    "tileMatrixSetId": "GoogleMapsCompatible_Level9",
+    "srs_name": "EPSG:3857",
+    "locale": {
+        "en": {
+            "name": "Labels"
+        }
+    },
+    "options": {
+        "requestEncoding":"REST",
+        "urlTemplate":"https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/Reference_Labels/default/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.png",
+        "format":"image/png"
+    },
+    "role_permissions": {
+        "Guest" : ["VIEW_LAYER", "VIEW_PUBLISHED"],
+        "User" : ["VIEW_LAYER", "VIEW_PUBLISHED", "PUBLISH"]
+    }
+}

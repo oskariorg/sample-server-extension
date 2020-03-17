@@ -1,28 +1,28 @@
 {
-    "name" : "World",
+    "name" : "World 3D",
     "type" : "DEFAULT",
     "default" : true,
     "public" : true,
-    "onlyUuid" : false,
+    "onlyUuid" : true,
     "oskari" : {
-        "application" : "geoportal",
+        "application" : "geoportal-3d",
         "page" : "geoportal",
         "development_prefix" : "/applications"
     },
     "selectedLayers" : [
-        "openmaptiles.json"
+        "nasa-blue-marble.json"
     ],
     "bundles" : [
         {
             "id" : "mapfull",
             "config" : {
                 "mapOptions": {
-                    "maxExtent" : {
-                        "left" : -20037508.34,
-                        "bottom" : -20037508.34,
-                        "right" : 20037508.34,
-                        "top" :  20037508.34
-                    },
+                    "maxExtent" : [
+                        -20037508.34,
+                        -20037508.34,
+                        20037508.34,
+                        20037508.34
+                    ],
                     "units": "m",
                     "srsName": "EPSG:3857",
                     "projection": "EPSG:3857",
@@ -63,13 +63,22 @@
                     {"id":"Oskari.mapframework.bundle.myplacesimport.plugin.UserLayersLayerPlugin"},
                     {"id":"Oskari.mapframework.bundle.mapmyplaces.plugin.MyPlacesLayerPlugin"},
                     {"id":"Oskari.mapframework.mapmodule.VectorLayerPlugin"},
-                    { "id" : "Oskari.mapframework.mapmodule.Tiles3DLayerPlugin" }
+                    {"id":"Oskari.mapframework.mapmodule.Tiles3DLayerPlugin"}
                 ]
             },
             "state" : {
-                "east": 0,
-                "north": 3500000,
-                "zoom": 1
+                "camera": {
+                    "location": {
+                      "x": 0,
+                      "y": 4000000,
+                      "altitude": 14310535.857098067
+                    },
+                    "orientation": {
+                        "heading": 0.0,
+                        "pitch": -90,
+                        "roll": 0.0
+                    }
+                }
             }
         },
         { "id" : "drawtools" },
@@ -109,6 +118,9 @@
         { "id" : "heatmap" },
         { "id" : "timeseries" },
         { "id" : "maprotator" },
-        { "id" : "statsgrid" }
+        { "id" : "statsgrid" },
+        { "id" : "dimension-change" },
+        { "id" : "time-control-3d" },
+        { "id" : "camera-controls-3d" }
     ]
 }
