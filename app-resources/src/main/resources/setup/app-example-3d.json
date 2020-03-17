@@ -4,6 +4,9 @@
     ],
     "layers": [
         "hki-3d-model.json",
-        "hki-3d-buildings.json"
+        "hki-3d-buildings.json",
+        "nasa-features.json",
+        "nasa-labels.json",
+        "nasa-water-mask.json"
     ]
 }

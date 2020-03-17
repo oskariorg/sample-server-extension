@@ -6,7 +6,7 @@
     "organization": "NASA EOSDIS",
     "inspiretheme": "Background maps",
     "tileMatrixSetId": "GoogleMapsCompatible_Level9",
-    "srs_name": "EPSG:4326",
+    "srs_name": "EPSG:3857",
     "locale": {
         "en": {
             "name": "Features"
