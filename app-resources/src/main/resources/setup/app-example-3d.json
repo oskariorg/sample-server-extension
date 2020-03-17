@@ -1,6 +1,5 @@
 {
     "views" : [
-        "geoportal-3d.json",
-        "publisher-template-3d.json"
+        "geoportal-3d.json"
     ]
 }

@@ -4,6 +4,7 @@
     "name":"hki_buildings_3d_textures",
     "organization": "City of Helsinki",
     "inspiretheme": "Buildings",
+    "srs_name": "EPSG:3857",
     "locale": {
 		"fi": {
             "name": "Helsingin kaupungin 3D-rakennukset tekstuureilla"
