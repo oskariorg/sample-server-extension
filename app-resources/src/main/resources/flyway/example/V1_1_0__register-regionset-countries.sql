@@ -14,7 +14,7 @@ VALUES(
             "regionIdTag":"iso_a2",
             "nameIdTag":"name"
         }
-    }', true, 'EPSG:4326');
+    }', true, 'EPSG:3857');
 
 
 INSERT INTO oskari_maplayer_group(locale, parentid, selectable, order_number)
