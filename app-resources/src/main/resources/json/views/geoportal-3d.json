@@ -93,8 +93,7 @@
         { "id" : "statehandler" },
         { "id" : "search" },
         { "id" : "metadatacatalogue" },
-        { "id" : "layerselector2" },
-        { "id" : "layerselection2" },
+        { "id" : "layerlist" },
         {
             "id" : "coordinatetool",
             "config" : {"roundToDecimals":6}
