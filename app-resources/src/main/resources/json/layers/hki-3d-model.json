@@ -16,6 +16,15 @@
             "name": "Helsinki city 3D"
         }
     },
+    "options": {
+        "styles": {
+            "buildings": {
+                "fill": {
+                    "color": "#FFFFFF"
+                }
+            }
+        }
+    },
     "role_permissions": {
         "Guest" : ["VIEW_LAYER", "VIEW_PUBLISHED"],
         "User" : ["VIEW_LAYER", "VIEW_PUBLISHED", "PUBLISH"]
