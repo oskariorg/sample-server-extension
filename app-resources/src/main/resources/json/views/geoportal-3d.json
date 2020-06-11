@@ -3,7 +3,7 @@
     "type" : "DEFAULT",
     "default" : true,
     "public" : true,
-    "onlyUuid" : true,
+    "onlyUuid" : false,
     "oskari" : {
         "application" : "geoportal-3d",
         "page" : "geoportal",
@@ -91,13 +91,11 @@
         },
         { "id" : "statehandler" },
         { "id" : "search" },
-        { "id" : "metadatacatalogue" },
         { "id" : "layerlist" },
         {
             "id" : "coordinatetool",
             "config" : {"roundToDecimals":6}
         },
-        { "id" : "metadataflyout" },
         { "id" : "personaldata" },
         { "id" : "publisher2" },
         { "id" : "maplegend" },
