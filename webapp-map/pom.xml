@@ -28,14 +28,6 @@
             <version>${project.version}</version>
         </dependency>
 
-        <!-- Replace icu4j version included by axiom-api with newer version
-        which does not brake .jar investigation performed by jetty-maven plugin  -->
-        <dependency>
-            <groupId>com.ibm.icu</groupId>
-            <artifactId>icu4j</artifactId>
-            <version>51.1</version>
-        </dependency>
-
         <dependency>
             <groupId>fi.nls.oskari.service</groupId>
             <artifactId>oskari-control-base</artifactId>
@@ -97,12 +89,6 @@
         <dependency>
             <groupId>fi.nls.oskari</groupId>
             <artifactId>servlet-map</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.ibm.icu</groupId>
-                    <artifactId>icu4j</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>
