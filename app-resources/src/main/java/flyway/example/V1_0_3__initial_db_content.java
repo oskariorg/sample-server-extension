@@ -1,15 +1,16 @@
 package flyway.example;
 
-import fi.nls.oskari.db.DBHandler;
-import org.flywaydb.core.api.migration.jdbc.JdbcMigration;
+import fi.nls.oskari.db.ViewHelper;
+import org.flywaydb.core.api.migration.BaseJavaMigration;
+import org.flywaydb.core.api.migration.Context;
 
-import java.sql.Connection;
+public class V1_0_3__initial_db_content extends BaseJavaMigration {
 
-public class V1_0_3__initial_db_content implements JdbcMigration {
-
-    public void migrate(Connection connection)
-            throws Exception {
-        // run setup based on json under /src/main/resources/setup/app-example.json
-        DBHandler.setupAppContent(connection, "app-example");
+    public void migrate(Context context) throws Exception {
+        // add applications based on json under /src/main/resources/json/views/
+        ViewHelper.insertView(context.getConnection(), "geoportal-3857.json");
+        ViewHelper.insertView(context.getConnection(), "publisher-template.json");
+        ViewHelper.insertView(context.getConnection(), "geoportal-3067.json");
+        ViewHelper.insertView(context.getConnection(), "embedded-3857.json");
     }
 }

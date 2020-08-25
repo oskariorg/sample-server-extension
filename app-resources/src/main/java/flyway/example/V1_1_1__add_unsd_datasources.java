@@ -1,6 +1,7 @@
 package flyway.example;
 
-import org.flywaydb.core.api.migration.jdbc.JdbcMigration;
+import org.flywaydb.core.api.migration.BaseJavaMigration;
+import org.flywaydb.core.api.migration.Context;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,12 +10,13 @@ import java.sql.SQLException;
 /**
  * Register UN statistics datasource
  */
-public class V1_1_1__add_unsd_datasources implements JdbcMigration {
+public class V1_1_1__add_unsd_datasources extends BaseJavaMigration {
 
     private static final String layer = "ne_110m_countries";
     private static final String prefix = "UN Agenda 2030 SD Goal";
 
-    public void migrate(Connection connection) throws Exception {
+    public void migrate(Context context) throws Exception {
+        Connection connection = context.getConnection();
         addDS(connection, "Affordable and clean energy", "7");
         addDS(connection, "Decent work and economic growth", "8");
         addDS(connection, "Industry, innovation and infrastructure", "9");
