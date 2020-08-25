@@ -1,16 +1,15 @@
 package flyway.example3d;
 
-import fi.nls.oskari.db.ViewHelper;
 import fi.nls.oskari.domain.map.view.View;
 import fi.nls.oskari.domain.map.view.ViewTypes;
 import fi.nls.oskari.map.view.AppSetupServiceMybatisImpl;
 import fi.nls.oskari.map.view.ViewService;
-import fi.nls.oskari.util.FlywayHelper;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
+import org.oskari.helpers.AppsetupHelper;
+import org.oskari.helpers.FlywayHelper;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -28,7 +27,7 @@ public class V1_1__setup_3D_publishing extends BaseJavaMigration {
         viewService =  new AppSetupServiceMybatisImpl();
 
         // Create 3D publish template view
-        long templateViewId = ViewHelper.insertView(conn, TEMPLATE_JSON);
+        long templateViewId = AppsetupHelper.create(conn, TEMPLATE_JSON);
         String templateViewUuid = viewService.getViewWithConf(templateViewId).getUuid();
 
         // Set it as the publication template for the default 3D view.
