@@ -3,10 +3,10 @@ package flyway.example3d;
 import fi.nls.oskari.domain.map.view.Bundle;
 import fi.nls.oskari.log.LogFactory;
 import fi.nls.oskari.log.Logger;
-import fi.nls.oskari.util.FlywayHelper;
 import fi.nls.oskari.util.JSONHelper;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
+import org.oskari.helpers.FlywayHelper;
 
 import java.sql.Connection;
 import java.sql.SQLException;
