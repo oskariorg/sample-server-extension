@@ -44,7 +44,7 @@ public class V1_1_1__add_unsd_datasources extends BaseJavaMigration {
     }
 
     private String getRegionsetLinkInsert(String name) {
-        return "INSERT INTO oskari_statistical_layer(datasource_id, layer_id, config) " +
+        return "INSERT INTO oskari_statistical_datasource_regionsets(datasource_id, layer_id, config) " +
             "VALUES(" +
                 "(SELECT id FROM oskari_statistical_datasource " +
                     "WHERE locale like '%" + name + "%'), " +
