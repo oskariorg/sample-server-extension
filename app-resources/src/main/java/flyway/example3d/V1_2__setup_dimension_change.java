@@ -6,7 +6,7 @@ import fi.nls.oskari.log.Logger;
 import fi.nls.oskari.util.JSONHelper;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
-import org.oskari.helpers.FlywayHelper;
+import org.oskari.helpers.AppsetupHelper;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -21,13 +21,13 @@ public class V1_2__setup_dimension_change extends BaseJavaMigration {
     public void migrate(Context context) throws SQLException {
         Connection conn = context.getConnection();
         // Set 3D view's uuid for 2D default and user appsetups
-        List<Long> viewIds2d = FlywayHelper.getUserAndDefaultViewIds(conn, APPLICATION_2D_NAME);
-        String uuid3d = FlywayHelper.getDefaultViewUuid(conn, APPLICATION_3D_NAME);
+        List<Long> viewIds2d = AppsetupHelper.getSetupsForUserAndDefaultType(conn, APPLICATION_2D_NAME);
+        String uuid3d = AppsetupHelper.getUuidForDefaultSetup(conn, APPLICATION_3D_NAME);
         setBundleForViews(conn, viewIds2d, uuid3d);
 
         // Set default 2D view's uuid for 3D default appsetup
-        List<Long> viewIds3d = FlywayHelper.getUserAndDefaultViewIds(conn, APPLICATION_3D_NAME);
-        String uuid2d =  FlywayHelper.getDefaultViewUuid( conn, APPLICATION_2D_NAME);
+        List<Long> viewIds3d = AppsetupHelper.getSetupsForUserAndDefaultType(conn, APPLICATION_3D_NAME);
+        String uuid2d =  AppsetupHelper.getUuidForDefaultSetup( conn, APPLICATION_2D_NAME);
         setBundleForViews(conn, viewIds3d, uuid2d);
     }
     private void setBundleForViews (Connection conn, List<Long> ids, String uuid) throws SQLException {
@@ -35,12 +35,12 @@ public class V1_2__setup_dimension_change extends BaseJavaMigration {
                 JSONHelper.createJSONObject("uuid", uuid)
                 ,"{}");
         for (Long id : ids) {
-            if (!FlywayHelper.viewContainsBundle(conn, BUNDLE_NAME, id)) {
-                FlywayHelper.addBundleWithDefaults(conn, id, BUNDLE_NAME);
+            if (!AppsetupHelper.appContainsBundle(conn, id, BUNDLE_NAME)) {
+                AppsetupHelper.addBundleToApp(conn, id, BUNDLE_NAME);
             }
-            Bundle bundle = FlywayHelper.getBundleFromView(conn, BUNDLE_NAME, id);
+            Bundle bundle = AppsetupHelper.getAppBundle(conn, id, BUNDLE_NAME);
             bundle.setConfig(conf);
-            FlywayHelper.updateBundleInView(conn, bundle, id);
+            AppsetupHelper.updateAppBundle(conn, id, bundle);
         }
         LOG.info("Set view uuid:", uuid, "to dimension change bundle config. Updated views:", ids);
     }
