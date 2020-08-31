@@ -3,7 +3,7 @@ package flyway.example3d;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
 import org.oskari.helpers.LayerHelper;
-import org.oskari.helpers.AppsetupHelper;
+import org.oskari.helpers.AppSetupHelper;
 
 /**
  * Creates a new 3D view
@@ -19,6 +19,6 @@ public class V1_0__create_3D_view extends BaseJavaMigration {
         LayerHelper.setupLayer("nasa-water-mask.json");
 
         // add applications based on json under /src/main/resources/json/views/
-        AppsetupHelper.create(context.getConnection(), "geoportal-3d.json");
+        AppSetupHelper.create(context.getConnection(), "geoportal-3d.json");
     }
 }
