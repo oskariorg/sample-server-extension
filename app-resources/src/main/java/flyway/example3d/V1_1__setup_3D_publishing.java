@@ -6,7 +6,7 @@ import fi.nls.oskari.map.view.AppSetupServiceMybatisImpl;
 import fi.nls.oskari.map.view.ViewService;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
-import org.oskari.helpers.AppsetupHelper;
+import org.oskari.helpers.AppSetupHelper;
 
 import java.sql.Connection;
 import java.util.List;
@@ -26,11 +26,11 @@ public class V1_1__setup_3D_publishing extends BaseJavaMigration {
         viewService =  new AppSetupServiceMybatisImpl();
 
         // Create 3D publish template view
-        long templateViewId = AppsetupHelper.create(conn, TEMPLATE_JSON);
+        long templateViewId = AppSetupHelper.create(conn, TEMPLATE_JSON);
         String templateViewUuid = viewService.getViewWithConf(templateViewId).getUuid();
 
         // Set it as the publication template for the default 3D view.
-        List<Long> viewIds = AppsetupHelper.getSetupsForApplicationByType(conn, APPLICATION_3D_NAME, ViewTypes.DEFAULT);
+        List<Long> viewIds = AppSetupHelper.getSetupsForApplicationByType(conn, APPLICATION_3D_NAME, ViewTypes.DEFAULT);
         for (long viewId : viewIds) {
             View geoportalView = viewService.getViewWithConf(viewId);
             geoportalView.getMetadata().put(METADATA_TEMPLATE_KEY, templateViewUuid);
