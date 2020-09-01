@@ -31,8 +31,8 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>fi.nls.oskari</groupId>
-                <artifactId>oskari-parent</artifactId>
+                <groupId>org.oskari</groupId>
+                <artifactId>oskari-server</artifactId>
                 <version>${oskari.version}</version>
                 <scope>import</scope>
                 <type>pom</type>

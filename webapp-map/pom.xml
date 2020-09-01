@@ -29,47 +29,38 @@
         </dependency>
 
         <dependency>
-            <groupId>fi.nls.oskari.service</groupId>
-            <artifactId>oskari-control-base</artifactId>
+            <groupId>org.oskari</groupId>
+            <artifactId>control-users</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>fi.nls.oskari.service</groupId>
-            <artifactId>oskari-control-users</artifactId>
+            <groupId>org.oskari</groupId>
+            <artifactId>control-example</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>fi.nls.oskari.service</groupId>
-            <artifactId>oskari-control-example</artifactId>
+            <groupId>org.oskari</groupId>
+            <artifactId>control-myplaces</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>fi.nls.oskari.service</groupId>
-            <artifactId>oskari-control-myplaces</artifactId>
+            <groupId>org.oskari</groupId>
+            <artifactId>control-admin</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>fi.nls.oskari.service</groupId>
-            <artifactId>oskari-control-admin</artifactId>
+            <groupId>org.oskari</groupId>
+            <artifactId>control-routing</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>fi.nls.oskari.service</groupId>
-            <artifactId>oskari-control-routing</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>fi.nls.oskari.service</groupId>
-            <artifactId>oskari-control-statistics</artifactId>
+            <groupId>org.oskari</groupId>
+            <artifactId>control-statistics</artifactId>
         </dependency>
         <!-- Statistics plugins -->
         <dependency>
-            <groupId>fi.nls.oskari.service</groupId>
+            <groupId>org.oskari</groupId>
             <artifactId>service-statistics-pxweb</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.oskari.service</groupId>
-            <artifactId>service-statistics-unsd</artifactId>
         </dependency>
         <!-- /Statistics plugins -->
 
@@ -79,7 +70,7 @@
         </dependency>
 
         <dependency>
-            <groupId>fi.nls.oskari</groupId>
+            <groupId>org.oskari</groupId>
             <artifactId>service-logging</artifactId>
         </dependency>
         <dependency>
@@ -87,7 +78,7 @@
             <artifactId>log4j-slf4j-impl</artifactId>
         </dependency>
         <dependency>
-            <groupId>fi.nls.oskari</groupId>
+            <groupId>org.oskari</groupId>
             <artifactId>servlet-map</artifactId>
         </dependency>
 
