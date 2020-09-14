@@ -10,7 +10,7 @@
         "development_prefix" : "/applications"
     },
     "selectedLayers" : [
-        "openmaptiles.json"
+        "/json/layers/openmaptiles.json"
     ],
     "bundles" : [
         {
