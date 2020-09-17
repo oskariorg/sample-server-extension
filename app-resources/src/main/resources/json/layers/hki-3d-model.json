@@ -17,6 +17,7 @@
         }
     },
     "options": {
+        "maximumScreenSpaceError": 0,
         "styles": {
             "buildings": {
                 "fill": {

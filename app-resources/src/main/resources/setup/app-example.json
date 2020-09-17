@@ -1,8 +1,0 @@
-{
-    "views" : [
-        "geoportal-3857.json",
-        "publisher-template.json",
-        "geoportal-3067.json",
-        "embedded-3857.json"
-    ]
-}
