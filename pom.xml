@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.oskari.demo</groupId>
     <artifactId>server-extension</artifactId>
-    <version>1.4.0-SNAPSHOT</version>
+    <version>1.4.0</version>
     <packaging>pom</packaging>
     <name>demo.oskari.org</name>
 
