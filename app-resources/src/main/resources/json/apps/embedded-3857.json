@@ -70,6 +70,7 @@
                 "zoom": 1
             }
         },
+        { "id" : "publishedstatehandler" },
         { "id" : "drawtools" },
         { "id" : "toolbar" },
         {
@@ -78,6 +79,7 @@
                 "adaptable" : true
             }
         },
-        { "id" : "maprotator" }
+        { "id" : "maprotator" },
+        { "id" : "rpc" }
     ]
 }
