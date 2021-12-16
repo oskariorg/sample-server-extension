@@ -10,7 +10,7 @@
     <name>demo.oskari.org</name>
 
     <properties>
-        <oskari.version>2.5.2</oskari.version>
+        <oskari.version>2.5.3</oskari.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
     </properties>
