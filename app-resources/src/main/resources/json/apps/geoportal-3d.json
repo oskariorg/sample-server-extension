@@ -94,7 +94,14 @@
         { "id" : "layerlist" },
         {
             "id" : "coordinatetool",
-            "config" : {"roundToDecimals":6}
+            "config" : {
+                "projectionShowFormat": {
+                    "EPSG:3857": {
+                        "decimals": 0
+                    },
+                    "decimals": 6
+                }
+            }
         },
         { "id" : "personaldata" },
         { "id" : "publisher2" },
