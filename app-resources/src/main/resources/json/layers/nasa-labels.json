@@ -1,6 +1,6 @@
 {
     "type":"wmtslayer",
-    "url":"https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/wmts.cgi",
+    "url":"https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/1.0.0/WMTSCapabilities.xml",
     "name":"Reference_Labels",
     "version": "1.0.0",
     "organization": "NASA EOSDIS",
@@ -11,11 +11,6 @@
         "en": {
             "name": "Labels"
         }
-    },
-    "options": {
-        "requestEncoding":"REST",
-        "urlTemplate":"https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/Reference_Labels/default/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.png",
-        "format":"image/png"
     },
     "role_permissions": {
         "Guest" : ["VIEW_LAYER", "VIEW_PUBLISHED"],
