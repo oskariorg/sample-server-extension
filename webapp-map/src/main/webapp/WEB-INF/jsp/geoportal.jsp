@@ -20,25 +20,36 @@
         @media screen {
             body {
                 margin: 0;
-                padding: 0;
-            }
+                padding: 20px;
 
-            #mapdiv {
+                height: 100%;
                 width: 100%;
             }
-
-            #maptools {
-                background-color: #333438;
+            #oskari {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                gap: 0px;
+                position: relative;
+                overflow: hidden;
+                /* for application to set */
                 height: 100%;
-                position: absolute;
-                top: 0;
-                width: 153px;
-                z-index: 2;
+                width: 100%;
+            }
+            #maptools {
+                min-width: 170px;
+                flex-basis: 170px;
+                display: block;
+                overflow: auto;
+
+                /* for application to set */
+                background-color: #333438;
             }
 
             #contentMap {
+                /* flex-grow: 4; */
                 height: 100%;
-                margin-left: 170px;
+                width: 100%;
             }
 
             #login {
@@ -86,61 +97,58 @@
 </head>
 <body>
 
-<nav id="maptools">
-    <div id="logobar">
-    </div>
-    <div id="menubar">
-    </div>
-    <div id="divider">
-    </div>
-    <div id="toolbar">
-    </div>
-    <div id="login">
-        <c:choose>
-            <c:when test="${!empty loginState}">
-                <p class="error"><spring:message code="invalid_password_or_username" text="Invalid password or username!" /></p>
-            </c:when>
-        </c:choose>
-        <c:choose>
-            <%-- If logout url is present - so logout link --%>
-            <c:when test="${!empty _logout_uri}">
-                <form action="${pageContext.request.contextPath}${_logout_uri}" method="POST" id="logoutform">
-                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                    <a href="${pageContext.request.contextPath}${_logout_uri}" style="color: #ffffff;" onClick="jQuery('#logoutform').submit();return false;"><spring:message code="logout" text="Logout" /></a>
-                </form>
-                <%-- oskari-profile-link id is used by the personaldata bundle - do not modify --%>
-                <a href="${pageContext.request.contextPath}${_registration_uri}" style="color: #ffffff;" id="oskari-profile-link"><spring:message code="account" text="Account" /></a>
-            </c:when>
-            <%-- Otherwise show appropriate logins --%>
-            <c:otherwise>
-                <c:if test="${!empty _login_uri && !empty _login_field_user}">
-                    <form action='${pageContext.request.contextPath}${_login_uri}' method="post" accept-charset="UTF-8">
-                        <input size="16" id="username" name="${_login_field_user}" type="text" placeholder="<spring:message code="username" text="Username" />" autofocus
-                               required>
-                        <input size="16" id="password" name="${_login_field_pass}" type="password" placeholder="<spring:message code="password" text="Password" />" required>
-                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                        <input type="submit" id="submit" value="<spring:message code="login" text="Log in" />">
-                    </form>
-                </c:if>
-            </c:otherwise>
-        </c:choose>
-    </div>
-
-
-            <div id="demolink">
-                <a href="#" style="margin: 10px; color: #ffd400;"
-                onClick="changeAppsetup()">EPSG:3067</a>
-            </div>
-</nav>
-<div id="contentMap" class="oskariui container-fluid">
-    <div id="menutoolbar" class="container-fluid"></div>
-    <div class="row-fluid oskariui-mode-content" style="height: 100%; background-color:white;">
-        <div class="oskariui-left"></div>
-        <div class="span12 oskariui-center" style="height: 100%; margin: 0;">
-            <div id="mapdiv"></div>
+<div id="oskari">
+    <!-- Container to render Oskari in. Consider creating nav element and div#contentMap in JS-code -->
+    <nav id="maptools">
+        <div id="logobar">
+            <!-- Container for logo TODO: move it to JS -->
         </div>
-        <div class="oskari-closed oskariui-right">
-            <div id="mapdivB"></div>
+        <div id="menubar">
+            <!-- Container for menu items or "tiles" from bundles -->
+        </div>
+
+        <!-- More app-specific stuff TODO: move it to JS  -->
+        <div id="login">
+            <c:choose>
+                <c:when test="${!empty loginState}">
+                    <p class="error"><spring:message code="invalid_password_or_username" text="Invalid password or username!" /></p>
+                </c:when>
+            </c:choose>
+            <c:choose>
+                <%-- If logout url is present - so logout link --%>
+                <c:when test="${!empty _logout_uri}">
+                    <form action="${pageContext.request.contextPath}${_logout_uri}" method="POST" id="logoutform">
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                        <a href="${pageContext.request.contextPath}${_logout_uri}" style="color: #ffffff;" onClick="jQuery('#logoutform').submit();return false;"><spring:message code="logout" text="Logout" /></a>
+                    </form>
+                    <%-- oskari-profile-link id is used by the personaldata bundle - do not modify --%>
+                    <a href="${pageContext.request.contextPath}${_registration_uri}" style="color: #ffffff;" id="oskari-profile-link"><spring:message code="account" text="Account" /></a>
+                </c:when>
+                <%-- Otherwise show appropriate logins --%>
+                <c:otherwise>
+                    <c:if test="${!empty _login_uri && !empty _login_field_user}">
+                        <form action='${pageContext.request.contextPath}${_login_uri}' method="post" accept-charset="UTF-8">
+                            <input size="16" id="username" name="${_login_field_user}" type="text" placeholder="<spring:message code="username" text="Username" />" autofocus
+                                   required>
+                            <input size="16" id="password" name="${_login_field_pass}" type="password" placeholder="<spring:message code="password" text="Password" />" required>
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                            <input type="submit" id="submit" value="<spring:message code="login" text="Log in" />">
+                        </form>
+                    </c:if>
+                </c:otherwise>
+            </c:choose>
+        </div>
+
+
+        <div id="demolink">
+            <a href="#" style="margin: 10px; color: #ffd400;"
+            onClick="changeAppsetup()">EPSG:3067</a>
+        </div>
+    </nav>
+    <div id="contentMap">
+        <!-- Container for the "main content" ie map including the mobile toolbar etc -->
+        <div id="mapdiv">
+            <!-- Container root for map -->
         </div>
     </div>
 </div>
