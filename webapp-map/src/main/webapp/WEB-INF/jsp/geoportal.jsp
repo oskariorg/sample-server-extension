@@ -26,30 +26,13 @@
                 width: 100%;
             }
             #oskari {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
-                gap: 0px;
-                position: relative;
-                overflow: hidden;
                 /* for application to set */
                 height: 100%;
                 width: 100%;
             }
             #maptools {
-                min-width: 170px;
-                flex-basis: 170px;
-                display: block;
-                overflow: auto;
-
                 /* for application to set */
                 background-color: #333438;
-            }
-
-            #contentMap {
-                /* flex-grow: 4; */
-                height: 100%;
-                width: 100%;
             }
 
             #login {
@@ -98,7 +81,10 @@
 <body>
 
 <div id="oskari">
-    <!-- Container to render Oskari in. Consider creating nav element and div#contentMap in JS-code -->
+    <!--
+         Container to render Oskari in. Consider creating nav element and div#contentMap in JS-code
+         TODO: frontend should generate this as well. An empty element with id="oskari" or similar should be enough.
+     -->
     <nav id="maptools">
         <div id="logobar">
             <!-- Container for logo TODO: move it to JS -->
@@ -107,6 +93,8 @@
             <!-- Container for menu items or "tiles" from bundles -->
         </div>
 
+        <div id="toolbar">
+        </div>
         <!-- More app-specific stuff TODO: move it to JS  -->
         <div id="login">
             <c:choose>
@@ -145,12 +133,15 @@
             onClick="changeAppsetup()">EPSG:3067</a>
         </div>
     </nav>
-    <div id="contentMap">
-        <!-- Container for the "main content" ie map including the mobile toolbar etc -->
-        <div id="mapdiv">
-            <!-- Container root for map -->
-        </div>
+    <%--
+        This is commented out as frontend generates these 
+        <div id="contentMap">
+            <!-- Container for the "main content" ie map including the mobile toolbar etc -->
+            <div id="mapdiv">
+                <!-- Container root for map -->
+            </div>
     </div>
+     --%>
 </div>
 
 
