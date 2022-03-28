@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.oskari.demo</groupId>
         <artifactId>server-extension</artifactId>
-        <version>1.21.0-SNAPSHOT</version>
+        <version>1.21.0</version>
     </parent>
     <artifactId>app-resources</artifactId>
     <packaging>jar</packaging>
