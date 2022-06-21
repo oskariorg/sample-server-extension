@@ -95,7 +95,7 @@
                 }
             }
         },
-        { "id" : "personaldata" },
+        { "id" : "mydata" },
         { "id" : "publisher2" },
         { "id" : "maplegend" },
         {
