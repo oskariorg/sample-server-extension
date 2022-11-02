@@ -11,11 +11,11 @@
     <link
             rel="stylesheet"
             type="text/css"
-            href="/Oskari${path}/icons.css"/>
+            href="${clientDomain}/Oskari${path}/icons.css"/>
     <link
             rel="stylesheet"
             type="text/css"
-            href="/Oskari${path}/oskari.min.css"/>
+            href="${clientDomain}/Oskari${path}/oskari.min.css"/>
     <style type="text/css">
         @media screen {
             body {
@@ -98,7 +98,7 @@
     }
 
     #logobar {
-        background-image: url('/Oskari${path}/oskari_rgb_72.png') !important;
+        background-image: url('${clientDomain}/Oskari${path}/oskari_rgb_72.png') !important;
     }
 
     .oskari-tile.statsgrid .statsgrid-functionality .text {
@@ -116,7 +116,7 @@
             #login input[type="text"], #login input[type="password"] {
                 width: 90%;
                 margin-bottom: 5px;
-                background-image: url("/Oskari/${version}/resources/images/forms/input_shadow.png");
+                background-image: url("${clientDomain}/Oskari/${version}/resources/images/forms/input_shadow.png");
                 background-repeat: no-repeat;
                 padding-left: 5px;
                 padding-right: 5px;
@@ -231,15 +231,15 @@ function changeAppsetup() {
 </script>
 <%-- Pre-compiled application JS, empty unless created by build job --%>
 <script type="text/javascript"
-        src="/Oskari${path}/oskari.min.js">
+        src="${clientDomain}/Oskari${path}/oskari.min.js">
 </script>
 <%--language files --%>
 <script type="text/javascript"
-        src="/Oskari${path}/oskari_lang_${language}.js">
+        src="${clientDomain}/Oskari${path}/oskari_lang_${language}.js">
 </script>
 
 <script type="text/javascript"
-        src="/Oskari${path}/index.js">
+        src="${clientDomain}/Oskari${path}/index.js">
 </script>
 
 
