@@ -101,6 +101,18 @@
             <artifactId>postgresql</artifactId>
         </dependency>
     </dependencies>
+    <profiles>
+        <profile>
+            <id>tomcat</id>
+            <dependencies>
+                <dependency>
+                    <groupId>javax.servlet</groupId>
+                    <artifactId>jstl</artifactId>
+                </dependency>
+            </dependencies>
+        </profile>
+
+    </profiles>
 
     <build>
         <finalName>${appName}</finalName>
