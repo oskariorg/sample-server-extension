@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.oskari.demo</groupId>
         <artifactId>server-extension</artifactId>
-        <version>1.22.0-SNAPSHOT</version>
+        <version>1.24.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>webapp-map</artifactId>
@@ -101,6 +101,18 @@
             <artifactId>postgresql</artifactId>
         </dependency>
     </dependencies>
+    <profiles>
+        <profile>
+            <id>tomcat</id>
+            <dependencies>
+                <dependency>
+                    <groupId>javax.servlet</groupId>
+                    <artifactId>jstl</artifactId>
+                </dependency>
+            </dependencies>
+        </profile>
+
+    </profiles>
 
     <build>
         <finalName>${appName}</finalName>
