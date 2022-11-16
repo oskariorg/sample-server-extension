@@ -20,32 +20,25 @@
         @media screen {
             body {
                 margin: 0;
-                padding: 0;
-            }
-
-            #mapdiv {
+                padding: 20px;
+/*
+                height: 100vh;
                 width: 100%;
+                */
             }
 
             #maptools {
                 background-color: #FFFFFF;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                width: 153px;
-                z-index: 2;
+                width: 170px;
             }
 
    .oskari-tile {
         background: #9e9e9e !important;
-		height: auto !important;
-		min-height: 31px !important;
-        line-height: 15px !important;
     }
     .oskari-tile-closed {
         background-color: white !important;
+        border-top-width: 0px !important;
         border-bottom: 1px solid #c8c9ca !important;
-        border-top: 1px solid white !important;
     }
 
     .oskari-tile-attached {
@@ -76,8 +69,6 @@
 		background-color: #9e9e9e !important;
 		border-top: 0px !important;
 		border-bottom: 0px !important;
-		height: 14px !important;
-		width: 100% !important;
 	}
 
     #toolbar {
@@ -104,11 +95,6 @@
     .oskari-tile.statsgrid .statsgrid-functionality .text {
         color: white;
     }
-            #contentMap {
-                height: 100%;
-                margin-left: 170px;
-            }
-
             #login {
                 margin-left: 5px;
             }
@@ -154,6 +140,18 @@
 </head>
 <body>
 
+<div id="contentMap" class="oskariui container-fluid">
+    <div id="menutoolbar" class="container-fluid"></div>
+    <div class="row-fluid oskariui-mode-content" style="height: 100%; background-color:white;">
+        <div class="oskariui-left"></div>
+        <div class="span12 oskariui-center" style="height: 100%; margin: 0;">
+            <div id="mapdiv"></div>
+        </div>
+        <div class="oskari-closed oskariui-right">
+            <div id="mapdivB"></div>
+        </div>
+    </div>
+</div>
 <nav id="maptools">
     <div id="logobar">
     </div>
@@ -198,18 +196,6 @@
                 onClick="changeAppsetup()">EPSG:3857</a>
             </div>
 </nav>
-<div id="contentMap" class="oskariui container-fluid">
-    <div id="menutoolbar" class="container-fluid"></div>
-    <div class="row-fluid oskariui-mode-content" style="height: 100%; background-color:white;">
-        <div class="oskariui-left"></div>
-        <div class="span12 oskariui-center" style="height: 100%; margin: 0;">
-            <div id="mapdiv"></div>
-        </div>
-        <div class="oskari-closed oskariui-right">
-            <div id="mapdivB"></div>
-        </div>
-    </div>
-</div>
 
 <!-- ############# Javascript ################# -->
 
