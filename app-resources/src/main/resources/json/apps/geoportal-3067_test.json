@@ -1,0 +1,97 @@
+{
+  "name" : "Finland",
+  "type" : "DEFAULT",
+  "default" : true,
+  "public" : true,
+  "onlyUuid" : false,
+  "oskari" : {
+    "application" : "geoportal",
+    "page" : "geoportal_red",
+    "development_prefix" : "/applications"
+  },
+  "selectedLayers" : ["/json/layers/wmslayer-kapsi-mml-fi.json"],
+  "bundles" : [
+    {
+      "id" : "mapfull",
+      "config" : {
+        "mapOptions": {
+          "srsName": "EPSG:3067",
+          "maxExtent": {
+            "bottom": 6291456,
+            "left": -548576,
+            "right": 1548576,
+            "top": 8388608
+          },
+
+          "style": { "toolStyle": "angular-dark"},
+          "resolutions": [2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1, 0.5, 0.25]
+        },
+        "plugins" : [
+          { "id" : "Oskari.mapframework.bundle.mapmodule.plugin.LayersPlugin" },
+          { "id" : "Oskari.mapframework.mapmodule.WmsLayerPlugin" },
+          { "id" : "Oskari.mapframework.mapmodule.MarkersPlugin" },
+          { "id" : "Oskari.mapframework.mapmodule.ControlsPlugin" },
+          { "id" : "Oskari.mapframework.mapmodule.GetInfoPlugin" },
+          { "id" : "Oskari.mapframework.wmts.mapmodule.plugin.WmtsLayerPlugin" },
+          { "id" : "Oskari.wfsvector.WfsVectorLayerPlugin" },
+          { "id" : "Oskari.mapframework.bundle.mapmodule.plugin.ScaleBarPlugin" },
+          { "id" : "Oskari.mapframework.bundle.mapmodule.plugin.Portti2Zoombar" },
+          { "id" : "Oskari.mapframework.bundle.mapmodule.plugin.PanButtons" },
+          { "id" : "Oskari.mapframework.bundle.mapmodule.plugin.FullScreenPlugin" },
+          { "id":"Oskari.mapframework.bundle.mapmodule.plugin.LogoPlugin"},
+          { "id" : "Oskari.mapframework.bundle.myplacesimport.plugin.UserLayersLayerPlugin" },
+          { "id" : "Oskari.mapframework.bundle.mapmyplaces.plugin.MyPlacesLayerPlugin" },
+          { "id" : "Oskari.mapframework.mapmodule.VectorLayerPlugin" },
+          { "id" : "Oskari.mapframework.mapmodule.Tiles3DLayerPlugin" }
+        ],
+        "layers": []
+      },
+      "state" : {
+        "east": 517620,
+        "north": 7078842,
+        "selectedLayers": [],
+        "zoom": 2
+      }
+    },
+    { "id" : "divmanazer" },
+    { "id" : "drawtools" },
+    { "id" : "toolbar",
+      "config": {
+        "colours":{
+          "hover":"#009FE3",
+          "background":"#ffffff"
+        }
+    }},
+    { "id" : "infobox" },
+    { "id" : "statehandler" },
+    { "id" : "search" },
+    { "id" : "metadatacatalogue" },
+    { "id" : "layerlist" },
+    { "id" : "coordinatetool"},
+    { "id" : "metadataflyout" },
+    { "id" : "personaldata" },
+    { "id" : "publisher2" },
+    { "id" : "maplegend" },
+    {
+      "id" : "userguide",
+      "config" : {
+        "tags" : "userguide",
+        "flyoutClazz" : "Oskari.mapframework.bundle.userguide.SimpleFlyout"
+      }
+    },
+    { "id" : "guidedtour" },
+    { "id" : "sample-info" },
+    { "id" : "myplaces3" },
+    { "id" : "printout" },
+    { "id" : "maprotator" },
+    { "id" : "myplacesimport" },
+    {
+      "id" : "featuredata2",
+      "config": {
+        "selectionTools": true
+      }
+    },
+    { "id" : "heatmap" },
+    { "id" : "statsgrid" }
+  ]
+}

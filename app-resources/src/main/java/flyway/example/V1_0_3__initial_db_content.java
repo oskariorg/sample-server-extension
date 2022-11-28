@@ -7,7 +7,7 @@ import org.flywaydb.core.api.migration.Context;
 public class V1_0_3__initial_db_content extends BaseJavaMigration {
 
     public void migrate(Context context) throws Exception {
-        // add applications based on json under /src/main/resources/json/views/
+        // add applications based on json under /src/main/resources/json/apps/
         AppSetupHelper.create(context.getConnection(), "/json/apps/geoportal-3857.json");
         AppSetupHelper.create(context.getConnection(), "/json/apps/publisher-template.json");
         AppSetupHelper.create(context.getConnection(), "/json/apps/geoportal-3067.json");
