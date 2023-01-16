@@ -1,13 +1,47 @@
 {
-  "name" : "Finland",
+  "name" : "Stylized app",
   "type" : "DEFAULT",
   "default" : true,
   "public" : true,
   "onlyUuid" : false,
   "oskari" : {
     "application" : "geoportal",
-    "page" : "geoportal_red",
-    "development_prefix" : "/applications"
+    "page" : "geoportal_stylized",
+    "development_prefix" : "/applications",
+    "metadata": {
+      "theme": {
+        "color": {
+          "header": {
+            "bg": "#DC143C",
+            "text": "#FFFFFF",
+            "icon": "#FFFFFF"
+          },
+          "primary": "#DC143C",
+          "accent": "#f55172",
+          "text": "#FFFFFF"
+        },
+        "map": {
+          "font": "fantasy",
+          "color": {
+            "header": {
+              "bg": "#DC143C",
+              "text": "#FFFFFF",
+              "icon": "#FFFFFF"
+            },
+            "accent": "#f55172"
+          },
+          "navigation": {
+            "roundness": 20,
+            "opacity": 0.9,
+            "color": {
+              "primary": "#DC143C",
+              "accent": "#f55172",
+              "text": "#FFFFFF"
+            }
+          }
+        }
+      }
+    }
   },
   "selectedLayers" : ["/json/layers/wmslayer-kapsi-mml-fi.json"],
   "bundles" : [
@@ -23,7 +57,6 @@
             "top": 8388608
           },
 
-          "style": { "toolStyle": "angular-dark"},
           "resolutions": [2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1, 0.5, 0.25]
         },
         "plugins" : [

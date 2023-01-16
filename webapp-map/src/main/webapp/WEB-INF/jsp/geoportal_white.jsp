@@ -20,11 +20,7 @@
         @media screen {
             body {
                 margin: 0;
-                padding: 20px;
-/*
-                height: 100vh;
-                width: 100%;
-                */
+                padding: 0;
             }
 
             #maptools {
@@ -134,23 +130,22 @@
                 padding: 5px;
             }
 
+            #demolink select {
+                max-width: 90%;
+                margin: 10px;
+            }
         }
     </style>
     <!-- ############# /css ################# -->
 </head>
+<%-- Nor defining an element with id="oskari" will make Oskari use the body-tag as root element --%>
 <body>
-
-<div id="contentMap" class="oskariui container-fluid">
-    <div id="menutoolbar" class="container-fluid"></div>
-    <div class="row-fluid oskariui-mode-content" style="height: 100%; background-color:white;">
-        <div class="oskariui-left"></div>
-        <div class="span12 oskariui-center" style="height: 100%; margin: 0;">
-            <div id="mapdiv"></div>
-        </div>
-        <div class="oskari-closed oskariui-right">
-            <div id="mapdivB"></div>
-        </div>
-    </div>
+<%--
+Normally we would let frontend code to create the map container,
+but since we want to force it to appear before the navigation we declare it here.
+--%>
+<div id="contentMap">
+    <div id="mapdiv"></div>
 </div>
 <nav id="maptools">
     <div id="logobar">
@@ -191,21 +186,26 @@
             </c:otherwise>
         </c:choose>
     </div>
-            <div id="demolink">
-                <a href="#" style="margin: 10px; color: #3c3c3c;"
-                onClick="changeAppsetup()">EPSG:3857</a>
-            </div>
+    <div id="demolink">
+        <a href="#" style="margin: 10px; color: #3c3c3c;"
+        onClick="changeAppsetup()">EPSG:3857</a>
+    </div>
 </nav>
 
 <!-- ############# Javascript ################# -->
 
 <script>
-function changeAppsetup() {
-    var appsetup = Oskari.app.getSystemDefaultViews().filter(function (appsetup) {
-        return  appsetup.name === 'World';
-    });
+var otherSetup = 'World'
+function changeAppsetup(parUuid) {
+    var uuid = parUuid;
+    if (!uuid) {
+        var appsetup = uuid || Oskari.app.getSystemDefaultViews().filter(function (appsetup) {
+            return  appsetup.name === otherSetup;
+        });
+        uuid = appsetup[0].uuid;
+    }
 
-    window.location=window.location.pathname + '?uuid=' + appsetup[0].uuid;
+    window.location=window.location.pathname + '?uuid=' + uuid;
     return false;
 }
 </script>
@@ -227,7 +227,24 @@ function changeAppsetup() {
 <script type="text/javascript"
         src="${clientDomain}/Oskari${path}/index.js">
 </script>
+<script type="text/javascript">
+Oskari.on("app.start", function () {
+    var container = jQuery('#demolink');
+    container.empty();
+    container.append('<select>')
+    var select = container.find("select");
 
+    select.on("change", function() {
+        changeAppsetup(select.val());
+    });
+    var current = Oskari.app.getUuid();
+    Oskari.app.getSystemDefaultViews().forEach(function(item) {
+        var opt = jQuery('<option value="' + item.uuid + '">' + item.name + '</option>');
+        opt.attr('selected', current === item.uuid);
+        select.append(opt);
+    });
+});
+</script>
 
 <!-- ############# /Javascript ################# -->
 </body>

@@ -20,7 +20,7 @@
         @media screen {
             body {
                 margin: 0;
-                padding: 20px;
+                padding: 0;
 
                 height: 100vh;
                 width: 100%;
@@ -72,6 +72,10 @@
             #login a {
                 color: #FFF;
                 padding: 5px;
+            }
+            #demolink select {
+                max-width: 90%;
+                margin: 10px;
             }
 
         }
@@ -127,33 +131,28 @@
             </c:choose>
         </div>
 
-
         <div id="demolink">
             <a href="#" style="margin: 10px; color: #ffd400;"
             onClick="changeAppsetup()">EPSG:3067</a>
         </div>
     </nav>
-    <%--
-        This is commented out as frontend generates these 
-        <div id="contentMap">
-            <!-- Container for the "main content" ie map including the mobile toolbar etc -->
-            <div id="mapdiv">
-                <!-- Container root for map -->
-            </div>
-    </div>
-     --%>
 </div>
 
 
 <!-- ############# Javascript ################# -->
 
 <script>
-function changeAppsetup() {
-    var appsetup = Oskari.app.getSystemDefaultViews().filter(function (appsetup) {
-        return  appsetup.name === 'Finland';
-    });
+var otherSetup = 'Finland'
+function changeAppsetup(parUuid) {
+    var uuid = parUuid;
+    if (!uuid) {
+        var appsetup = uuid || Oskari.app.getSystemDefaultViews().filter(function (appsetup) {
+            return  appsetup.name === otherSetup;
+        });
+        uuid = appsetup[0].uuid;
+    }
 
-    window.location=window.location.pathname + '?uuid=' + appsetup[0].uuid;
+    window.location=window.location.pathname + '?uuid=' + uuid;
     return false;
 }
 </script>
@@ -174,6 +173,24 @@ function changeAppsetup() {
 
 <script type="text/javascript"
         src="${clientDomain}/Oskari${path}/index.js">
+</script>
+<script type="text/javascript">
+Oskari.on("app.start", function () {
+    var container = jQuery('#demolink');
+    container.empty();
+    container.append('<select>')
+    var select = container.find("select");
+
+    select.on("change", function() {
+        changeAppsetup(select.val());
+    });
+    var current = Oskari.app.getUuid();
+    Oskari.app.getSystemDefaultViews().forEach(function(item) {
+        var opt = jQuery('<option value="' + item.uuid + '">' + item.name + '</option>');
+        opt.attr('selected', current === item.uuid);
+        select.append(opt);
+    });
+});
 </script>
 
 

@@ -7,7 +7,42 @@
   "oskari" : {
     "application" : "geoportal",
     "page" : "geoportal_white",
-    "development_prefix" : "/applications"
+    "development_prefix" : "/applications",
+    "metadata": {
+      "theme": {
+        "color": {
+          "header": {
+            "bg": "#ffffff",
+            "text": "#00BFFF",
+            "icon": "#1E90FF"
+          },
+          "primary": "#ffffff",
+          "accent": "#00BFFF",
+          "text": "#000000"
+        },
+        "map": {
+          "font": "verdana",
+          "color": {
+            "header": {
+              "bg": "#ffffff",
+              "text": "#00BFFF",
+              "icon": "#1E90FF"
+            },
+            "accent": "#00BFFF"
+          },
+          "navigation": {
+            "roundness": 50,
+            "opacity": 0.8,
+            "effect": "3D",
+            "color": {
+              "primary": "#ffffff",
+              "accent": "#00BFFF",
+              "text": "#1E90FF"
+            }
+          }
+        }
+      }
+    }
   },
   "selectedLayers" : ["/json/layers/wmslayer-kapsi-mml-fi.json"],
   "bundles" : [
@@ -22,8 +57,6 @@
             "right": 1548576,
             "top": 8388608
           },
-
-          "style": { "toolStyle": "3d-light"},
           "resolutions": [2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1, 0.5, 0.25]
         },
         "plugins" : [

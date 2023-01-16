@@ -45,7 +45,7 @@
                 width: 100%;
                 height: 100%;
             }
-            main > div.samiwrapper {
+            main > div.wrapper {
                 display: flex;
                 width: 100%;
                 height: 100%;
@@ -118,6 +118,10 @@
                 padding: 5px;
             }
 
+            #demolink select {
+                max-width: 90%;
+                margin: 10px;
+            }
         }
     </style>
     <!-- ############# /css ################# -->
@@ -157,20 +161,25 @@
     </div>
 </header>
 <main>
-    <div class="samiwrapper">
+    <div class="wrapper">
         <div class="sidebar">
             <img src="${clientDomain}/Oskari${path}/oskari_rgb_72.png" />
         </div>
         <div class="mappart">
+        <%-- Oskari uses an element with id="oskari" as it's root element by default --%>
             <div id="oskari">
                 <nav id="maptools">
-
                     <div id="menubar">
                     </div>
                     <div id="divider">
                     </div>
                     <div id="toolbar">
                     </div>
+                     <div id="demolink">
+                        <a href="#" style="margin: 10px; color: #ffd400;"
+                        onClick="changeAppsetup()">EPSG:3067</a>
+                    </div>
+
                 </nav>
             </div>
         </div>
@@ -179,6 +188,21 @@
 
 <!-- ############# Javascript ################# -->
 
+<script>
+var otherSetup = 'Finland'
+function changeAppsetup(parUuid) {
+    var uuid = parUuid;
+    if (!uuid) {
+        var appsetup = uuid || Oskari.app.getSystemDefaultViews().filter(function (appsetup) {
+            return  appsetup.name === otherSetup;
+        });
+        uuid = appsetup[0].uuid;
+    }
+
+    window.location=window.location.pathname + '?uuid=' + uuid;
+    return false;
+}
+</script>
 <!--  OSKARI -->
 
 <script type="text/javascript">
@@ -196,6 +220,24 @@
 
 <script type="text/javascript"
         src="${clientDomain}/Oskari${path}/index.js">
+</script>
+<script type="text/javascript">
+Oskari.on("app.start", function () {
+    var container = jQuery('#demolink');
+    container.empty();
+    container.append('<select>')
+    var select = container.find("select");
+
+    select.on("change", function() {
+        changeAppsetup(select.val());
+    });
+    var current = Oskari.app.getUuid();
+    Oskari.app.getSystemDefaultViews().forEach(function(item) {
+        var opt = jQuery('<option value="' + item.uuid + '">' + item.name + '</option>');
+        opt.attr('selected', current === item.uuid);
+        select.append(opt);
+    });
+});
 </script>
 
 
