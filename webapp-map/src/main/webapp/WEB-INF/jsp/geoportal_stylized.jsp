@@ -20,83 +20,71 @@
         @media screen {
             body {
                 margin: 0;
-                padding: 0;
+                padding: 0px;
+                height: 100vh;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            header.serviceheader {
+                width: 100%;
+                /* Having min and max != normal height */
+                min-height: 50px;
+                max-height: 50px;
+                background-color: crimson;
+                color: aliceblue;
+                display:block;
+                overflow: hidden;
+            }
+            header.serviceheader h1 {
+                margin-left: 15px;
+                margin-top: 8px;
+                display: inline-block;
+            }
+            main {
+                width: 100%;
+                height: 100%;
+            }
+            main > div.wrapper {
+                display: flex;
+                width: 100%;
+                height: 100%;
+            }
+            div.sidebar {
+                display:block;
+                overflow: hidden;
+                min-width: 50px;
+                max-height: 100%;
+                background-color: crimson;
+                writing-mode: vertical-rl;
+                text-orientation: upright;
+
+                font-size: 20pt;
+                padding-right: 14px;
+                padding-top: 10px;
+            }
+            div.sidebar img {
+                z-index: 1000;
+                position: absolute;
+                bottom: 45px;
+                left: -50px;
+                width: 146px;
+                transform: rotate(-90deg);
+           }
+            div.mappart {
+                display: block;
+                max-height: 100%;
+                width: 100%;
+                overflow: hidden;
             }
 
-            #maptools {
-                background-color: #FFFFFF;
-                width: 170px;
-            }
-
-   .oskari-tile {
-        background: #9e9e9e !important;
-    }
-    .oskari-tile-closed {
-        background-color: white !important;
-        border-top-width: 0px !important;
-        border-bottom: 1px solid #c8c9ca !important;
-    }
-
-    .oskari-tile-attached {
-        background-color: #2d2d2d !important;
-        border-bottom: 1px solid white !important;
-        border-top: 1px solid #c8c9ca !important;
-    }
-
-    .oskari-tile-attached .oskari-tile-title {
-		color: white !important;
-	}
-
-	.oskari-tile-closed .oskari-tile-title {
-		color: black !important;
-	}
-
-    .oskari-flyout-title {
-        color: white !important;
-    }
-
-    .oskari-flyouttoolbar {
-    	background-color: #c8c9ca !important;
-		background-position: -170px -23px !important;
-        background-repeat: no-repeat;
-    }
-
-    .oskari-flyoutheading {
-		background-color: #9e9e9e !important;
-		border-top: 0px !important;
-		border-bottom: 0px !important;
-	}
-
-    #toolbar {
-        margin: 30px 5px 30px 5px !important;
-        width: auto !important;
-        border: 1px black solid;
-        border-radius: 5px;
-        box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.75);
-    }
-
-    #toolbar div.toolrow {
-        border: 0px;
-    }
-
-    .divmanazerpopup h3.popupHeader {
-        background-color: #9e9e9e !important;
-        color: white;
-    }
-
-    #logobar {
-        background-image: url('${clientDomain}/Oskari${path}/oskari_rgb_72.png') !important;
-    }
-
-    .oskari-tile.statsgrid .statsgrid-functionality .text {
-        color: white;
-    }
             #login {
-                margin-left: 5px;
+                float: right;
+                margin: 8px;
             }
 
             #login input[type="text"], #login input[type="password"] {
-                width: 90%;
+                display: inline-block;
                 margin-bottom: 5px;
                 background-image: url("${clientDomain}/Oskari/${version}/resources/images/forms/input_shadow.png");
                 background-repeat: no-repeat;
@@ -109,7 +97,7 @@
                 font: 13px/100% Arial,sans-serif;
             }
             #login input[type="submit"] {
-                width: 90%;
+                display: inline-block;
                 margin-bottom: 5px;
                 padding-left: 5px;
                 padding-right: 5px;
@@ -121,12 +109,12 @@
             }
             #login p.error {
                 font-weight: bold;
-                color : red;
+                color : yellow;
                 margin-bottom: 10px;
             }
 
             #login a {
-                color: #FFF;
+                color: aliceblue;
                 padding: 5px;
             }
 
@@ -138,24 +126,10 @@
     </style>
     <!-- ############# /css ################# -->
 </head>
-<%-- Nor defining an element with id="oskari" will make Oskari use the body-tag as root element --%>
 <body>
-<%--
-Normally we would let frontend code to create the map container,
-but since we want to force it to appear before the navigation we declare it here.
---%>
-<div id="contentMap">
-    <div id="mapdiv"></div>
-</div>
-<nav id="maptools">
-    <div id="logobar">
-    </div>
-    <div id="menubar">
-    </div>
-    <div id="divider">
-    </div>
-    <div id="toolbar">
-    </div>
+<header class="serviceheader">
+    <h1>Palvelu X</h1>
+
     <div id="login">
         <c:choose>
             <c:when test="${!empty loginState}">
@@ -179,23 +153,43 @@ but since we want to force it to appear before the navigation we declare it here
                         <input size="16" id="username" name="${_login_field_user}" type="text" placeholder="<spring:message code="username" text="Username" />" autofocus
                                required>
                         <input size="16" id="password" name="${_login_field_pass}" type="password" placeholder="<spring:message code="password" text="Password" />" required>
-                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                         <input type="submit" id="submit" value="<spring:message code="login" text="Log in" />">
                     </form>
                 </c:if>
             </c:otherwise>
         </c:choose>
     </div>
-    <div id="demolink">
-        <a href="#" style="margin: 10px; color: #3c3c3c;"
-        onClick="changeAppsetup()">EPSG:3857</a>
+</header>
+<main>
+    <div class="wrapper">
+        <div class="sidebar">
+            <img src="${clientDomain}/Oskari${path}/oskari_rgb_72.png" />
+        </div>
+        <div class="mappart">
+        <%-- Oskari uses an element with id="oskari" as it's root element by default --%>
+            <div id="oskari">
+                <nav id="maptools">
+                    <div id="menubar">
+                    </div>
+                    <div id="divider">
+                    </div>
+                    <div id="toolbar">
+                    </div>
+                     <div id="demolink">
+                        <a href="#" style="margin: 10px; color: #ffd400;"
+                        onClick="changeAppsetup()">EPSG:3067</a>
+                    </div>
+
+                </nav>
+            </div>
+        </div>
     </div>
-</nav>
+</main>
 
 <!-- ############# Javascript ################# -->
 
 <script>
-var otherSetup = 'World'
+var otherSetup = 'Finland'
 function changeAppsetup(parUuid) {
     var uuid = parUuid;
     if (!uuid) {
@@ -245,6 +239,7 @@ Oskari.on("app.start", function () {
     });
 });
 </script>
+
 
 <!-- ############# /Javascript ################# -->
 </body>

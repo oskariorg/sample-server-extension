@@ -1,43 +1,42 @@
 {
-  "name" : "Finland",
+  "name" : "Stylized app",
   "type" : "DEFAULT",
   "default" : true,
   "public" : true,
   "onlyUuid" : false,
   "oskari" : {
     "application" : "geoportal",
-    "page" : "geoportal_white",
+    "page" : "geoportal_stylized",
     "development_prefix" : "/applications",
     "metadata": {
       "theme": {
         "color": {
           "header": {
-            "bg": "#ffffff",
-            "text": "#00BFFF",
-            "icon": "#1E90FF"
+            "bg": "#DC143C",
+            "text": "#FFFFFF",
+            "icon": "#FFFFFF"
           },
-          "primary": "#ffffff",
-          "accent": "#00BFFF",
-          "text": "#000000"
+          "primary": "#DC143C",
+          "accent": "#f55172",
+          "text": "#FFFFFF"
         },
         "map": {
-          "font": "verdana",
+          "font": "fantasy",
           "color": {
             "header": {
-              "bg": "#ffffff",
-              "text": "#00BFFF",
-              "icon": "#1E90FF"
+              "bg": "#DC143C",
+              "text": "#FFFFFF",
+              "icon": "#FFFFFF"
             },
-            "accent": "#00BFFF"
+            "accent": "#f55172"
           },
           "navigation": {
-            "roundness": 50,
-            "opacity": 0.8,
-            "effect": "3D",
+            "roundness": 20,
+            "opacity": 0.9,
             "color": {
-              "primary": "#ffffff",
-              "accent": "#00BFFF",
-              "text": "#1E90FF"
+              "primary": "#DC143C",
+              "accent": "#f55172",
+              "text": "#FFFFFF"
             }
           }
         }
@@ -57,6 +56,7 @@
             "right": 1548576,
             "top": 8388608
           },
+
           "resolutions": [2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1, 0.5, 0.25]
         },
         "plugins" : [
