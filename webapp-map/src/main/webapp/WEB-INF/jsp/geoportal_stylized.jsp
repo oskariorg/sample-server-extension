@@ -119,7 +119,7 @@
             }
 
             #demolink select {
-                max-width: 90%;
+                max-width: 85%;
                 margin: 10px;
             }
         }
