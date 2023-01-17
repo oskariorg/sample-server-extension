@@ -88,13 +88,7 @@
     },
     { "id" : "divmanazer" },
     { "id" : "drawtools" },
-    { "id" : "toolbar",
-      "config": {
-        "colours":{
-          "hover":"#009FE3",
-          "background":"#ffffff"
-        }
-    }},
+    { "id" : "toolbar" },
     { "id" : "infobox" },
     { "id" : "statehandler" },
     { "id" : "search" },
