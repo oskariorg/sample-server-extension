@@ -30,10 +30,6 @@
                 height: 100%;
                 width: 100%;
             }
-            #maptools {
-                /* for application to set */
-                background-color: #333438;
-            }
 
             #login {
                 margin-left: 5px;
@@ -86,7 +82,8 @@
 
 <div id="oskari">
     <!--
-         Container to render Oskari in. Consider creating nav element and div#contentMap in JS-code
+         By default Oskari renders to container with id "oskari" or if one is not found to body element directly.
+         Nav element needs to be in base-HTML for now. We should consider creating nav element in JS-code like div#contentMap etc currently is-
          TODO: frontend should generate this as well. An empty element with id="oskari" or similar should be enough.
      -->
     <nav id="maptools">
@@ -178,7 +175,7 @@ function changeAppsetup(parUuid) {
 Oskari.on("app.start", function () {
     var container = jQuery('#demolink');
     container.empty();
-    container.append('<select>')
+    container.append('<select title="Select application">')
     var select = container.find("select");
 
     select.on("change", function() {
