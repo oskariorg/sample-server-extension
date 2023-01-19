@@ -18,79 +18,48 @@
             href="${clientDomain}/Oskari${path}/oskari.min.css"/>
     <style type="text/css">
         @media screen {
-            body {
-                margin: 0;
-                padding: 0;
+           .oskari-tile {
+                background: #9e9e9e !important;
+                border-bottom: 1px solid #c8c9ca !important;
+            }
+            .oskari-tile-closed {
+                background-color: white !important;
+                border-top-width: 0px !important;
             }
 
-            #maptools {
-                background-color: #FFFFFF;
-                width: 170px;
+            .oskari-tile-attached {
+                background-color: #2d2d2d !important;
+                border-bottom: 1px solid white !important;
+                border-top: 1px solid #c8c9ca !important;
             }
 
-   .oskari-tile {
-        background: #9e9e9e !important;
-    }
-    .oskari-tile-closed {
-        background-color: white !important;
-        border-top-width: 0px !important;
-        border-bottom: 1px solid #c8c9ca !important;
-    }
+            .oskari-tile-attached .oskari-tile-title {
+                color: white !important;
+            }
 
-    .oskari-tile-attached {
-        background-color: #2d2d2d !important;
-        border-bottom: 1px solid white !important;
-        border-top: 1px solid #c8c9ca !important;
-    }
+            .oskari-tile-closed .oskari-tile-title {
+                color: black !important;
+            }
 
-    .oskari-tile-attached .oskari-tile-title {
-		color: white !important;
-	}
+            #toolbar {
+                margin: 30px 5px 30px 5px !important;
+                width: auto !important;
+                border: 1px black solid;
+                border-radius: 5px;
+                box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.75);
+            }
 
-	.oskari-tile-closed .oskari-tile-title {
-		color: black !important;
-	}
+            #toolbar div.toolrow {
+                border: 0px;
+            }
 
-    .oskari-flyout-title {
-        color: white !important;
-    }
+            #logobar {
+                background-image: url('${clientDomain}/Oskari${path}/oskari_rgb_72.png') !important;
+            }
 
-    .oskari-flyouttoolbar {
-    	background-color: #c8c9ca !important;
-		background-position: -170px -23px !important;
-        background-repeat: no-repeat;
-    }
-
-    .oskari-flyoutheading {
-		background-color: #9e9e9e !important;
-		border-top: 0px !important;
-		border-bottom: 0px !important;
-	}
-
-    #toolbar {
-        margin: 30px 5px 30px 5px !important;
-        width: auto !important;
-        border: 1px black solid;
-        border-radius: 5px;
-        box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.75);
-    }
-
-    #toolbar div.toolrow {
-        border: 0px;
-    }
-
-    .divmanazerpopup h3.popupHeader {
-        background-color: #9e9e9e !important;
-        color: white;
-    }
-
-    #logobar {
-        background-image: url('${clientDomain}/Oskari${path}/oskari_rgb_72.png') !important;
-    }
-
-    .oskari-tile.statsgrid .statsgrid-functionality .text {
-        color: white;
-    }
+            .oskari-tile.statsgrid .statsgrid-functionality .text {
+                color: white;
+            }
             #login {
                 margin-left: 5px;
             }
@@ -231,7 +200,7 @@ function changeAppsetup(parUuid) {
 Oskari.on("app.start", function () {
     var container = jQuery('#demolink');
     container.empty();
-    container.append('<select>')
+    container.append('<select title="Select application">')
     var select = container.find("select");
 
     select.on("change", function() {

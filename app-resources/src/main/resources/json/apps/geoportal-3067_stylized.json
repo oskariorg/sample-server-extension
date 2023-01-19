@@ -20,6 +20,11 @@
           "accent": "#f55172",
           "text": "#FFFFFF"
         },
+        "navigation": {
+          "color": {
+            "primary": "#42000d"
+          }
+        },
         "map": {
           "font": "fantasy",
           "color": {

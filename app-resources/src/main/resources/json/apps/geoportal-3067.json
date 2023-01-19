@@ -20,6 +20,11 @@
           "accent": "#00BFFF",
           "text": "#000000"
         },
+        "navigation": {
+          "color": {
+            "primary": "#FFFFFF"
+          }
+        },
         "map": {
           "font": "verdana",
           "color": {

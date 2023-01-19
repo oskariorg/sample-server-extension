@@ -83,6 +83,23 @@
                 margin: 8px;
             }
 
+           .oskari-tile {
+                background: #3b000b !important;
+                border-bottom: 1px solid rgb(60, 60, 60, 0.8) !important;
+            }
+
+            .oskari-tile-attached {
+                background-color: #c6b2b6 !important;
+            }
+
+            .oskari-tile-attached .oskari-tile-title {
+                color: black !important;
+            }
+
+            .oskari-tile-closed .oskari-tile-title {
+                color: white !important;
+            }
+
             #login input[type="text"], #login input[type="password"] {
                 display: inline-block;
                 margin-bottom: 5px;
@@ -128,7 +145,7 @@
 </head>
 <body>
 <header class="serviceheader">
-    <h1>Palvelu X</h1>
+    <h1>Stylized service example</h1>
 
     <div id="login">
         <c:choose>
@@ -225,7 +242,7 @@ function changeAppsetup(parUuid) {
 Oskari.on("app.start", function () {
     var container = jQuery('#demolink');
     container.empty();
-    container.append('<select>')
+    container.append('<select title="Select application">')
     var select = container.find("select");
 
     select.on("change", function() {
