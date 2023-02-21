@@ -25,7 +25,7 @@ Layers can be configured in json:
 
 And referenced in app setups like in (the selectedLayers key):
 
-    app-resources/src/main/resources/json/views/geoportal-3857.json
+    app-resources/src/main/resources/json/apps/geoportal-3857.json
 
 Compile with:
 
