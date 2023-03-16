@@ -62,7 +62,8 @@
                     {"id":"Oskari.mapframework.bundle.myplacesimport.plugin.UserLayersLayerPlugin"},
                     {"id":"Oskari.mapframework.bundle.mapmyplaces.plugin.MyPlacesLayerPlugin"},
                     {"id":"Oskari.mapframework.mapmodule.VectorLayerPlugin"},
-                    { "id" : "Oskari.mapframework.mapmodule.Tiles3DLayerPlugin" }
+                    {"id": "Oskari.mapframework.mapmodule.Tiles3DLayerPlugin" },
+                    {"id": "Oskari.mapframework.bundle.mapmodule.plugin.SearchPlugin" }
                 ]
             },
             "state" : {
@@ -81,7 +82,6 @@
             }
         },
         { "id" : "statehandler" },
-        { "id" : "search" },
         { "id" : "layerlist" },
         {
             "id" : "coordinatetool",
