@@ -37,9 +37,12 @@
                 overflow: hidden;
             }
             header.serviceheader h1 {
+                font-family: fantasy;
                 margin-left: 15px;
                 margin-top: 8px;
                 display: inline-block;
+                color: white;
+                text-shadow: 1px 1px black;
             }
             main {
                 width: 100%;
@@ -81,6 +84,17 @@
             #login {
                 float: right;
                 margin: 8px;
+            }
+
+            #language-selector-root {
+                float: right;
+                margin: 8px;
+            }
+            
+            #language-selector-root select {
+                height: 33px;
+                padding-top: 4px;
+                padding-bottom: 4px;
             }
 
            .oskari-tile {
@@ -176,6 +190,7 @@
             </c:otherwise>
         </c:choose>
     </div>
+    <div id="language-selector-root"></div>
 </header>
 <main>
     <div class="wrapper">

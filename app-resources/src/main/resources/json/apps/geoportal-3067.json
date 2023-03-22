@@ -129,6 +129,7 @@
       }
     },
     { "id" : "heatmap" },
-    { "id" : "statsgrid" }
+    { "id" : "statsgrid" },
+    { "id" : "language-selector" }
   ]
 }
