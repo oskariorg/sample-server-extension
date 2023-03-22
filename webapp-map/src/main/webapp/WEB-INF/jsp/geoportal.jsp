@@ -69,7 +69,7 @@
                 color: #FFF;
                 padding: 5px;
             }
-            #demolink select {
+            nav#maptools select {
                 max-width: 85%;
                 margin: 10px;
             }
@@ -132,6 +132,7 @@
             <a href="#" style="margin: 10px; color: #ffd400;"
             onClick="changeAppsetup()">EPSG:3067</a>
         </div>
+        <div id="language-selector-root"></div>
     </nav>
 </div>
 

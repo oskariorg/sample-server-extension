@@ -99,7 +99,7 @@
                 padding: 5px;
             }
 
-            #demolink select {
+            nav#maptools select {
                 max-width: 85%;
                 margin: 10px;
             }
@@ -159,6 +159,7 @@ but since we want to force it to appear before the navigation we declare it here
         <a href="#" style="margin: 10px; color: #3c3c3c;"
         onClick="changeAppsetup()">EPSG:3857</a>
     </div>
+    <div id="language-selector-root"></div>
 </nav>
 
 <!-- ############# Javascript ################# -->

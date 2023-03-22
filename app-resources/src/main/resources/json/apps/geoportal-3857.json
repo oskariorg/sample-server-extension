@@ -112,6 +112,7 @@
         { "id" : "heatmap" },
         { "id" : "timeseries" },
         { "id" : "maprotator" },
-        { "id" : "statsgrid" }
+        { "id" : "statsgrid" },
+        { "id" : "language-selector" }
     ]
 }

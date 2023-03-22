@@ -12,12 +12,12 @@
       "theme": {
         "color": {
           "header": {
-            "bg": "#DC143C",
+            "bg": "#FF033E",
             "text": "#FFFFFF",
             "icon": "#FFFFFF"
           },
-          "primary": "#DC143C",
-          "accent": "#f55172",
+          "primary": "#FF033E",
+          "accent": "#B21031",
           "text": "#FFFFFF"
         },
         "navigation": {
@@ -29,18 +29,18 @@
           "font": "fantasy",
           "color": {
             "header": {
-              "bg": "#DC143C",
+              "bg": "#FF033E",
               "text": "#FFFFFF",
               "icon": "#FFFFFF"
             },
-            "accent": "#f55172"
+            "accent": "#B21031"
           },
           "navigation": {
             "roundness": 20,
             "opacity": 0.9,
             "color": {
-              "primary": "#DC143C",
-              "accent": "#f55172",
+              "primary": "#FF033E",
+              "accent": "#B21031",
               "text": "#FFFFFF"
             }
           }
@@ -128,6 +128,7 @@
       }
     },
     { "id" : "heatmap" },
-    { "id" : "statsgrid" }
+    { "id" : "statsgrid" },
+    { "id" : "language-selector" }
   ]
 }
