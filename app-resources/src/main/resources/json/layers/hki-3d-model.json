@@ -17,17 +17,21 @@
         }
     },
     "options": {
-        "maximumScreenSpaceError": 0,
-        "styles": {
-            "buildings": {
+        "maximumScreenSpaceError": 0
+    },
+    "role_permissions": {
+        "Guest" : ["VIEW_LAYER", "VIEW_PUBLISHED"],
+        "User" : ["VIEW_LAYER", "VIEW_PUBLISHED", "PUBLISH"]
+    },
+    "vectorStyles": [{
+        "type": "oskari",
+        "name": "Clean buildings",
+        "style": {
+            "featureStyle": {
                 "fill": {
                     "color": "#FFFFFF"
                 }
             }
         }
-    },
-    "role_permissions": {
-        "Guest" : ["VIEW_LAYER", "VIEW_PUBLISHED"],
-        "User" : ["VIEW_LAYER", "VIEW_PUBLISHED", "PUBLISH"]
-    }
+    }]
 }
