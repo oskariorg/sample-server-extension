@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>${viewName}</title>
 
     <!-- ############# css ################# -->
@@ -20,6 +20,12 @@
             href="${clientDomain}/Oskari${path}/oskari.min.css"/>
     <style type="text/css">
         @media screen {
+            body {
+              padding-top: env(safe-area-inset-top);
+              padding-right: env(safe-area-inset-right);
+              padding-bottom: env(safe-area-inset-bottom);
+              padding-left: env(safe-area-inset-left);
+            }
            .oskari-tile {
                 background: #9e9e9e !important;
                 border-bottom: 1px solid #c8c9ca !important;
