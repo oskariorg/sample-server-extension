@@ -26,7 +26,7 @@
           }
         },
         "map": {
-          "font": "fantasy",
+          "font": "verdana",
           "color": {
             "header": {
               "bg": "#FF033E",
