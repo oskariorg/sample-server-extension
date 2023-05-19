@@ -105,7 +105,7 @@
     { "id" : "layerlist" },
     { "id" : "coordinatetool"},
     { "id" : "metadataflyout" },
-    { "id" : "personaldata" },
+    { "id" : "mydata" },
     { "id" : "publisher2" },
     { "id" : "maplegend" },
     {
