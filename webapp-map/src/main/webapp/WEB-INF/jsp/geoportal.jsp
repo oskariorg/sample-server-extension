@@ -84,6 +84,11 @@
             }
 
         }
+        @media only screen (min-width: 768px) {
+            #login input {
+                font: 16px/100% Arial,sans-serif;
+            }
+        }
     </style>
     <!-- ############# /css ################# -->
 </head>
