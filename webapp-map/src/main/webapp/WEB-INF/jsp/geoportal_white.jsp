@@ -25,6 +25,7 @@
               padding-right: env(safe-area-inset-right);
               padding-bottom: env(safe-area-inset-bottom);
               padding-left: env(safe-area-inset-left);
+              min-height: -webkit-fill-available;
             }
            .oskari-tile {
                 background: #9e9e9e !important;

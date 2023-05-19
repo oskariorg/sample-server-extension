@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>${viewName}</title>
 
     <!-- ############# css ################# -->
@@ -35,6 +35,13 @@
 
             #login {
                 margin-left: 5px;
+            }
+            .oskari-root-el {
+              padding-top: env(safe-area-inset-top);
+              padding-right: env(safe-area-inset-right);
+              padding-bottom: env(safe-area-inset-bottom);
+              padding-left: env(safe-area-inset-left);
+              min-height: -webkit-fill-available;
             }
 
             #login input[type="text"], #login input[type="password"] {
