@@ -113,6 +113,7 @@
         { "id" : "timeseries" },
         { "id" : "maprotator" },
         { "id" : "statsgrid" },
+        { "id" : "userstyle" },
         { "id" : "language-selector" }
     ]
 }
