@@ -30,6 +30,10 @@
 
         <dependency>
             <groupId>org.oskari</groupId>
+            <artifactId>service-search-opendata</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.oskari</groupId>
             <artifactId>control-users</artifactId>
         </dependency>
 
