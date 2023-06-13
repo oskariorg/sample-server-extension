@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.oskari.demo</groupId>
         <artifactId>server-extension</artifactId>
-        <version>1.25.0-SNAPSHOT</version>
+        <version>1.25.0</version>
     </parent>
 
     <artifactId>webapp-map</artifactId>
