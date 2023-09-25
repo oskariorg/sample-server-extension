@@ -102,7 +102,7 @@
     { "id" : "infobox" },
     { "id" : "statehandler" },
     { "id" : "search" },
-    { "id" : "metadatacatalogue" },
+    { "id" : "metadatasearch" },
     { "id" : "layerlist" },
     { "id" : "coordinatetool"},
     { "id" : "metadataflyout" },

@@ -116,7 +116,7 @@
         { "id" : "guidedtour" },
         { "id" : "sample-info" },
         { "id" : "myplacesimport" },
-        { "id" : "featuredata2" },
+        { "id" : "featuredata" },
         { "id" : "heatmap" },
         { "id" : "timeseries" },
         { "id" : "maprotator" },
