@@ -101,7 +101,7 @@
     { "id" : "toolbar" },
     { "id" : "infobox" },
     { "id" : "statehandler" },
-    { "id" : "metadatacatalogue" },
+    { "id" : "metadatasearch" },
     { "id" : "layerlist" },
     { "id" : "coordinatetool"},
     { "id" : "metadataflyout" },
@@ -122,7 +122,7 @@
     { "id" : "maprotator" },
     { "id" : "myplacesimport" },
     {
-      "id" : "featuredata2",
+      "id" : "featuredata",
       "config": {
         "selectionTools": true
       }
