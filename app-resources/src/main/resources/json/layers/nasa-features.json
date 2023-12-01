@@ -1,7 +1,7 @@
 {
     "type":"wmtslayer",
     "url":"https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/1.0.0/WMTSCapabilities.xml",
-    "name":"Reference_Features",
+    "name":"Reference_Features_15m",
     "version": "1.0.0",
     "organization": "NASA EOSDIS",
     "inspiretheme": "Background maps",
