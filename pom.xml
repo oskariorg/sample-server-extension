@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.oskari.demo</groupId>
     <artifactId>server-extension</artifactId>
-    <version>1.27.1</version>
+    <version>1.28.0</version>
     <packaging>pom</packaging>
     <name>demo.oskari.org</name>
 
     <properties>
-        <oskari.version>2.13.1</oskari.version>
+        <oskari.version>2.14.0</oskari.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
     </properties>
