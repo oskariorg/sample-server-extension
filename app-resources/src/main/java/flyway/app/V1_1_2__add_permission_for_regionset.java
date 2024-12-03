@@ -1,4 +1,4 @@
-package flyway.example;
+package flyway.app;
 
 import fi.nls.oskari.domain.Role;
 import fi.nls.oskari.domain.User;

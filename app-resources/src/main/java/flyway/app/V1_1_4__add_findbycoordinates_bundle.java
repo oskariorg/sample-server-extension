@@ -1,4 +1,4 @@
-package flyway.example;
+package flyway.app;
 
 import fi.nls.oskari.domain.map.view.Bundle;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
