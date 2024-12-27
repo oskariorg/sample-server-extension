@@ -10,9 +10,9 @@
     <name>demo.oskari.org</name>
 
     <properties>
-        <oskari.version>2.15.0-SNAPSHOT</oskari.version>
+        <oskari.version>3.0.0-SNAPSHOT</oskari.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
     </properties>
 
     <repositories>
@@ -45,7 +45,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.13.0</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
@@ -54,7 +54,7 @@
 
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.1</version>
+                <version>3.4.0</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
@@ -62,7 +62,7 @@
             <plugin>
                 <groupId>org.cyclonedx</groupId>
                 <artifactId>cyclonedx-maven-plugin</artifactId>
-                <version>2.7.11</version>
+                <version>2.9.1</version>
                 <configuration>
                     <projectType>application</projectType>
                     <schemaVersion>1.4</schemaVersion>
