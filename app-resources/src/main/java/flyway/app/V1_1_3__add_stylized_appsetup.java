@@ -1,4 +1,4 @@
-package flyway.example;
+package flyway.app;
 
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
