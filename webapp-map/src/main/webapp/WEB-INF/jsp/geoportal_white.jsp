@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" isELIgnored="false" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <!DOCTYPE html>
@@ -116,7 +116,7 @@
     </style>
     <!-- ############# /css ################# -->
 </head>
-<%-- Nor defining an element with id="oskari" will make Oskari use the body-tag as root element --%>
+<%-- Not defining an element with id="oskari" will make Oskari use the body-tag as root element --%>
 <body>
 <%--
 Normally we would let frontend code to create the map container,
@@ -144,7 +144,6 @@ but since we want to force it to appear before the navigation we declare it here
             <%-- If logout url is present - so logout link --%>
             <c:when test="${!empty _logout_uri}">
                 <form action="${pageContext.request.contextPath}${_logout_uri}" method="POST" id="logoutform">
-                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <a href="${pageContext.request.contextPath}${_logout_uri}" style="color: #000000;" onClick="jQuery('#logoutform').submit();return false;"><spring:message code="logout" text="Logout" /></a>
                 </form>
                 <%-- oskari-profile-link id is used by the personaldata bundle - do not modify --%>
@@ -157,7 +156,6 @@ but since we want to force it to appear before the navigation we declare it here
                         <input size="16" id="username" name="${_login_field_user}" type="text" placeholder="<spring:message code="username" text="Username" />" autofocus
                                required>
                         <input size="16" id="password" name="${_login_field_pass}" type="password" placeholder="<spring:message code="password" text="Password" />" required>
-                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                         <input type="submit" id="submit" value="<spring:message code="login" text="Log in" />">
                     </form>
                 </c:if>
