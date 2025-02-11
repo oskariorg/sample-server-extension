@@ -121,8 +121,6 @@
             #login input[type="text"], #login input[type="password"] {
                 display: inline-block;
                 margin-bottom: 5px;
-                background-image: url("${clientDomain}/Oskari/${version}/resources/images/forms/input_shadow.png");
-                background-repeat: no-repeat;
                 padding-left: 5px;
                 padding-right: 5px;
                 border: 1px solid #B7B7B7;
@@ -180,7 +178,6 @@
             <%-- If logout url is present - so logout link --%>
             <c:when test="${!empty _logout_uri}">
                 <form action="${pageContext.request.contextPath}${_logout_uri}" method="POST" id="logoutform">
-                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <a href="${pageContext.request.contextPath}${_logout_uri}" onClick="jQuery('#logoutform').submit();return false;"><spring:message code="logout" text="Logout" /></a>
                 </form>
                 <%-- oskari-profile-link id is used by the personaldata bundle - do not modify --%>
