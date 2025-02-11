@@ -1,9 +1,9 @@
 package org.oskari;
 
-import fi.nls.oskari.MapController;
+import org.oskari.spring.controllers.MapController;
 import fi.nls.oskari.control.ActionParameters;
 import fi.nls.oskari.db.DatasourceHelper;
-import fi.nls.oskari.spring.extension.OskariParam;
+import org.oskari.spring.extension.OskariParam;
 import fi.nls.oskari.util.PropertyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
