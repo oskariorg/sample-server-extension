@@ -8,7 +8,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no" />
-    <link rel="icon" type="image/png" href="${ajaxUrl}action_route=Logo">
+    <%-- For overriding the default favicon you can do this or provide an alternative favicon.ico on your application --%>
+    <%-- link rel="icon" type="image/png" href="${ajaxUrl}action_route=Logo" --%>
     <title>${viewName}</title>
 
     <!-- ############# css ################# -->
@@ -187,9 +188,9 @@
             <c:otherwise>
                 <c:if test="${!empty _login_uri && !empty _login_field_user}">
                     <form action='${pageContext.request.contextPath}${_login_uri}' method="post" accept-charset="UTF-8">
-                        <input size="16" id="username" name="${_login_field_user}" type="text" placeholder="<spring:message code="username" text="Username" />" autofocus
+                        <input size="16" id="username" name="${_login_field_user}" type="text" autocomplete="username" placeholder="<spring:message code="username" text="Username" />" autofocus
                                required>
-                        <input size="16" id="password" name="${_login_field_pass}" type="password" placeholder="<spring:message code="password" text="Password" />" required>
+                        <input size="16" id="password" name="${_login_field_pass}" type="password" autocomplete="current-password" placeholder="<spring:message code="password" text="Password" />" required>
                         <input type="submit" id="submit" value="<spring:message code="login" text="Log in" />">
                     </form>
                 </c:if>
