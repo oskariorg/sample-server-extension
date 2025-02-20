@@ -10,6 +10,14 @@
     <meta name="format-detection" content="telephone=no" />
     <%-- For overriding the default favicon you can do this or provide an alternative favicon.ico on your application --%>
     <%-- link rel="icon" type="image/png" href="${ajaxUrl}action_route=Logo" --%>
+    <!-- Default favicon (for browsers that don't support media queries in link tags) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Light mode favicon -->
+    <link rel="icon" href="favicon-light.ico" type="image/x-icon" media="(prefers-color-scheme: light)">
+
+    <!-- Dark mode favicon -->
+    <link rel="icon" href="favicon-dark.ico" type="image/x-icon" media="(prefers-color-scheme: dark)">
     <title>${viewName}</title>
 
     <!-- ############# css ################# -->
@@ -89,11 +97,11 @@
 <body>
 
 <div id="oskari">
-    <!--
+    <%--
          By default Oskari renders to container with id "oskari" or if one is not found to body element directly.
          Nav element needs to be in base-HTML for now. We should consider creating nav element in JS-code like div#contentMap etc currently is-
          TODO: frontend should generate this as well. An empty element with id="oskari" or similar should be enough.
-     -->
+     --%>
     <nav id="maptools">
         <div id="logobar">
             <!-- Container for logo TODO: move it to JS -->
