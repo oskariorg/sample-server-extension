@@ -31,25 +31,41 @@
             href="${clientDomain}/Oskari${path}/oskari.min.css"/>
     <style type="text/css">
         @media screen {
-           .oskari-tile {
-                background: #9e9e9e !important;
-                border-bottom: 1px solid #c8c9ca !important;
+            .oskari-tile {
+                background: #A3C4BC !important;
+                border-bottom: none !important;
+                border-radius: 5px;
+                margin: 3px;
+                max-width: 98%;
+                box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.5);
             }
             .oskari-tile-closed {
-                background-color: white !important;
+                /* background-color: white !important;*/
                 border-top-width: 0px !important;
             }
 
             .oskari-tile-attached {
-                background-color: #2d2d2d !important;
-                border-bottom: 1px solid white !important;
-                border-top: 1px solid #c8c9ca !important;
+                background-color: #114B5F !important;
+                border-bottom: none !important;
+                border-top: none !important;
             }
 
             .oskari-tile-attached .oskari-tile-title {
                 color: white !important;
             }
 
+            div.toolbar_default div.toolrow div.tool:hover:not(.disabled):not(.selected) {
+                background-color: #114B5F !important;
+            }
+
+            div.toolrow div.tool.selected, div.toolrow div.tool:active:not(.disabled) {
+                background-color: #114B5F !important;
+            }
+
+            .oskari-tile-closed:hover {
+                border-top: none !important;
+                background: linear-gradient(rgb(48, 116, 115), rgb(17, 75, 95)) !important;
+            }
             .oskari-tile-closed .oskari-tile-title {
                 color: black !important;
             }
@@ -59,7 +75,7 @@
                 width: auto !important;
                 border: 1px black solid;
                 border-radius: 5px;
-                box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.75);
+                box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.5);
             }
 
             #toolbar div.toolrow {
@@ -67,12 +83,19 @@
             }
 
             #logobar {
-                background-image: url('${clientDomain}/Oskari${path}/oskari_rgb_72.png') !important;
+                background-image: url('${clientDomain}/Oskari${path}/oskari_logo_rgb_horizontal.svg') !important;
             }
 
-            .oskari-tile.statsgrid .statsgrid-functionality .text {
-                color: white;
+            /* Override the "open menu style" */
+            .oskari-tile-attached.statsgrid {
+                background-color: #114B5F !important;
+                color: white !important;
             }
+            .oskari-tile.oskari-tile-attached.statsgrid .statsgrid-functionality .text {
+                color: white !important;
+
+            }
+
             #login {
                 margin-left: 5px;
             }
@@ -80,7 +103,6 @@
             #login input[type="text"], #login input[type="password"] {
                 width: 90%;
                 margin-bottom: 5px;
-                background-image: url("${clientDomain}/Oskari/${version}/resources/images/forms/input_shadow.png");
                 background-repeat: no-repeat;
                 padding-left: 5px;
                 padding-right: 5px;
