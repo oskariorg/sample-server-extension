@@ -83,8 +83,8 @@
                 z-index: 1000;
                 position: absolute;
                 bottom: 45px;
-                left: -50px;
-                width: 146px;
+                left: -30px;
+                width: 110px;
                 transform: rotate(-90deg);
            }
             div.mappart {
@@ -210,7 +210,7 @@
 <main>
     <div class="wrapper">
         <div class="sidebar">
-            <img src="${clientDomain}/Oskari${path}/oskari_rgb_72.png" />
+            <img src="${clientDomain}/Oskari${path}/oskari_logo_white_horizontal.svg" />
         </div>
         <div class="mappart">
         <%-- Oskari uses an element with id="oskari" as it's root element by default --%>
