@@ -82,7 +82,7 @@
           { "id" : "Oskari.mapframework.bundle.mapmodule.plugin.ScaleBarPlugin" },
           { "id" : "Oskari.mapframework.bundle.mapmodule.plugin.Portti2Zoombar" },
           { "id" : "Oskari.mapframework.bundle.mapmodule.plugin.FullScreenPlugin" },
-          { "id":"Oskari.mapframework.bundle.mapmodule.plugin.LogoPlugin"},
+          { "id" : "Oskari.mapframework.bundle.mapmodule.plugin.LogoPlugin"},
           { "id" : "Oskari.mapframework.bundle.myplacesimport.plugin.UserLayersLayerPlugin" },
           { "id" : "Oskari.mapframework.bundle.mapmyplaces.plugin.MyPlacesLayerPlugin" },
           { "id" : "Oskari.mapframework.mapmodule.VectorLayerPlugin" },
@@ -136,7 +136,6 @@
       }
     },
     { "id" : "heatmap" },
-    { "id" : "statsgrid" },
     { "id" : "userstyle" },
     { "id" : "language-selector" }
   ]
