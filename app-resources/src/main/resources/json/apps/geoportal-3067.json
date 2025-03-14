@@ -11,40 +11,47 @@
     "metadata": {
       "theme": {
         "color": {
-          "header": {
-            "bg": "#ffffff",
-            "text": "#00BFFF",
-            "icon": "#1E90FF"
-          },
-          "primary": "#ffffff",
-          "accent": "#00BFFF",
-          "text": "#000000"
+            "icon": "#307473",
+            "accent": "#114B5F",
+            "primary": "#307473",
+            "header": {
+                "bg": "#A3C4BC",
+                "icon": "#307473",
+                "text": "#3c3c3c"
+            },
+            "text": "#000000"
         },
         "navigation": {
-          "color": {
-            "primary": "#FFFFFF"
-          }
+            "color": {
+                "primary": "#F4F1DE"
+            }
         },
         "map": {
-          "font": "verdana",
-          "color": {
-            "header": {
-              "bg": "#ffffff",
-              "text": "#00BFFF",
-              "icon": "#1E90FF"
-            },
-            "accent": "#00BFFF"
-          },
-          "navigation": {
-            "roundness": 50,
-            "opacity": 0.8,
-            "effect": "3D",
             "color": {
-              "primary": "#ffffff",
-              "accent": "#00BFFF",
-              "text": "#1E90FF"
-            }
-          }
+                "header": {
+                    "bg": "#A3C4BC",
+                    "icon": "#114B5F",
+                    "text": "#114B5F"
+                },
+                "accent": "#F26419"
+            },
+            "navigation": {
+                "color": {
+                    "text": "#3c3c3c",
+                    "accent": "#F26419",
+                    "primary": "#A3C4BC"
+                },
+                "effect": "3D",
+                "roundness": 50,
+                "opacity": 0.8
+            },
+            "infobox": {
+                "header": {
+                    "bg": "#A3C4BC",
+                    "text": "#3c3c3c"
+                }
+            },
+            "font": "verdana"
         }
       }
     }
@@ -95,8 +102,8 @@
     { "id" : "toolbar",
       "config": {
         "colours":{
-          "hover":"#009FE3",
-          "background":"#ffffff"
+          "hover":"#114B5F",
+          "background":"#F4F1DE"
         }
     }},
     { "id" : "infobox" },
