@@ -34,8 +34,9 @@
             body {
                 margin: 0;
                 padding: 0;
-
+                /* Uses vh if svh is not recognized */
                 height: 100vh;
+                height: 100svh;
                 width: 100%;
             }
             #oskari {
