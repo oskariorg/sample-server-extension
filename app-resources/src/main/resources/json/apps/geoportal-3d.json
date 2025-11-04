@@ -48,19 +48,15 @@
                     ]
                 },
                 "plugins" : [
-                    {"id":"Oskari.mapframework.bundle.mapmodule.plugin.LayersPlugin"},
-                    {"id":"Oskari.mapframework.mapmodule.WmsLayerPlugin"},
                     {"id":"Oskari.mapframework.mapmodule.MarkersPlugin"},
                     {"id":"Oskari.mapframework.mapmodule.ControlsPlugin"},
                     {"id":"Oskari.mapframework.mapmodule.GetInfoPlugin"},
-                    {"id":"Oskari.mapframework.wmts.mapmodule.plugin.WmtsLayerPlugin"},
                     {"id":"Oskari.wfsvector.WfsVectorLayerPlugin"},
                     {"id":"Oskari.mapframework.bundle.mapmodule.plugin.Portti2Zoombar"},
                     {"id":"Oskari.mapframework.bundle.mapmodule.plugin.FullScreenPlugin"},
                     {"id":"Oskari.mapframework.bundle.mapmodule.plugin.LogoPlugin"},
                     {"id":"Oskari.mapframework.bundle.myplacesimport.plugin.UserLayersLayerPlugin"},
                     {"id":"Oskari.mapframework.bundle.mapmyplaces.plugin.MyPlacesLayerPlugin"},
-                    {"id":"Oskari.mapframework.mapmodule.VectorLayerPlugin"},
                     {"id":"Oskari.mapframework.mapmodule.Tiles3DLayerPlugin"}
                 ]
             },
