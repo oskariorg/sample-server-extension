@@ -13,20 +13,16 @@
       "id": "mapfull",
       "config": {
         "plugins": [
-          { "id": "Oskari.mapframework.bundle.mapmodule.plugin.LayersPlugin" },
-          { "id": "Oskari.mapframework.mapmodule.WmsLayerPlugin" },
-          { "id" : "Oskari.wfsvector.WfsVectorLayerPlugin" },
-          { "id": "Oskari.mapframework.wmts.mapmodule.plugin.WmtsLayerPlugin" },
+          { "id": "Oskari.wfsvector.WfsVectorLayerPlugin" },
           { "id": "Oskari.mapframework.bundle.mapmodule.plugin.RealtimePlugin" },
           { "id": "Oskari.mapframework.bundle.mapmodule.plugin.LogoPlugin" },
-          { "id" : "Oskari.mapframework.bundle.myplacesimport.plugin.UserLayersLayerPlugin"},
+          { "id": "Oskari.mapframework.bundle.myplacesimport.plugin.UserLayersLayerPlugin"},
           { "id": "Oskari.arcgis.bundle.maparcgis.plugin.ArcGisLayerPlugin"},
           { "id": "Oskari.mapframework.mapmodule.MarkersPlugin",
             "config" : {
               "markerButton" : false
             }
           },
-          { "id": "Oskari.mapframework.mapmodule.VectorLayerPlugin" },
           { "id": "Oskari.mapframework.mapmodule.Tiles3DLayerPlugin" }
         ],
         "layers": []
