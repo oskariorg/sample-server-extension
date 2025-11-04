@@ -13,10 +13,10 @@
       "id": "mapfull",
       "config": {
         "plugins": [
-          { "id" : "Oskari.wfsvector.WfsVectorLayerPlugin" },
+          { "id": "Oskari.wfsvector.WfsVectorLayerPlugin" },
           { "id": "Oskari.mapframework.bundle.mapmodule.plugin.RealtimePlugin" },
           { "id": "Oskari.mapframework.bundle.mapmodule.plugin.LogoPlugin" },
-          { "id" : "Oskari.mapframework.bundle.myplacesimport.plugin.UserLayersLayerPlugin"},
+          { "id": "Oskari.mapframework.bundle.myplacesimport.plugin.UserLayersLayerPlugin"},
           { "id": "Oskari.arcgis.bundle.maparcgis.plugin.ArcGisLayerPlugin"},
           { "id": "Oskari.mapframework.mapmodule.MarkersPlugin",
             "config" : {
