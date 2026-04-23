@@ -49,11 +49,6 @@
 
         <dependency>
             <groupId>org.oskari</groupId>
-            <artifactId>control-myplaces</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.oskari</groupId>
             <artifactId>control-admin</artifactId>
         </dependency>
 
@@ -69,18 +64,9 @@
         <!-- Statistics plugins -->
         <dependency>
             <groupId>org.oskari</groupId>
-            <artifactId>service-statistics-pxweb</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.oskari</groupId>
             <artifactId>service-statistics-unsd</artifactId>
         </dependency>
         <!-- /Statistics plugins -->
-
-        <dependency>
-            <groupId>org.oskari</groupId>
-            <artifactId>control-userlayer</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.oskari</groupId>
