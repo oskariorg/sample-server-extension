@@ -56,8 +56,6 @@
                     {"id":"Oskari.mapframework.bundle.mapmodule.plugin.Portti2Zoombar"},
                     {"id":"Oskari.mapframework.bundle.mapmodule.plugin.FullScreenPlugin"},
                     {"id":"Oskari.mapframework.bundle.mapmodule.plugin.LogoPlugin"},
-                    {"id":"Oskari.mapframework.bundle.myplacesimport.plugin.UserLayersLayerPlugin"},
-                    {"id":"Oskari.mapframework.bundle.mapmyplaces.plugin.MyPlacesLayerPlugin"},
                     {"id": "Oskari.mapframework.mapmodule.Tiles3DLayerPlugin" },
                     {"id": "Oskari.mapframework.bundle.mapmodule.plugin.SearchPlugin" }
                 ]
@@ -100,10 +98,9 @@
                 "flyoutClazz" : "Oskari.mapframework.bundle.userguide.SimpleFlyout"
             }
         },
-        { "id" : "myplaces3" },
+        { "id" : "myfeatures" },
         { "id" : "guidedtour" },
         { "id" : "sample-info" },
-        { "id" : "myplacesimport" },
         { "id" : "featuredata" },
         { "id" : "heatmap" },
         { "id" : "timeseries" },
