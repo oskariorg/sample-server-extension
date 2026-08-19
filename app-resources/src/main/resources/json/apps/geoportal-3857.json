@@ -94,8 +94,7 @@
         {
             "id" : "userguide",
             "config" : {
-                "tags" : "userguide",
-                "flyoutClazz" : "Oskari.mapframework.bundle.userguide.SimpleFlyout"
+                "tags" : "userguide"
             }
         },
         { "id" : "myfeatures" },
